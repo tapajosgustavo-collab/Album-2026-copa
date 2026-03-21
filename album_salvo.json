@@ -1,0 +1,5147 @@
+{
+    "FWC": {
+        "nome": "Símbolos e Estádios",
+        "figurinhas": {
+            "FWC1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FWC20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            }
+        }
+    },
+    "USA": {
+        "nome": "Seleção USA",
+        "figurinhas": {
+            "USA1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "USA2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "USA20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "MEX": {
+        "nome": "Seleção MEX",
+        "figurinhas": {
+            "MEX1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "MEX2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MEX20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "CAN": {
+        "nome": "Seleção CAN",
+        "figurinhas": {
+            "CAN1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "CAN2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CAN20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "BRA": {
+        "nome": "Seleção BRA",
+        "figurinhas": {
+            "BRA1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "BRA2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BRA20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "ARG": {
+        "nome": "Seleção ARG",
+        "figurinhas": {
+            "ARG1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "ARG2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ARG20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "FRA": {
+        "nome": "Seleção FRA",
+        "figurinhas": {
+            "FRA1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "FRA2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "FRA20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "ENG": {
+        "nome": "Seleção ENG",
+        "figurinhas": {
+            "ENG1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "ENG2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ENG20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "GER": {
+        "nome": "Seleção GER",
+        "figurinhas": {
+            "GER1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "GER2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GER20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "ESP": {
+        "nome": "Seleção ESP",
+        "figurinhas": {
+            "ESP1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "ESP2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ESP20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "ITA": {
+        "nome": "Seleção ITA",
+        "figurinhas": {
+            "ITA1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "ITA2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ITA20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "POR": {
+        "nome": "Seleção POR",
+        "figurinhas": {
+            "POR1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "POR2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POR20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "NED": {
+        "nome": "Seleção NED",
+        "figurinhas": {
+            "NED1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "NED2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NED20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "BEL": {
+        "nome": "Seleção BEL",
+        "figurinhas": {
+            "BEL1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "BEL2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "BEL20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "CRO": {
+        "nome": "Seleção CRO",
+        "figurinhas": {
+            "CRO1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "CRO2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRO20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "URU": {
+        "nome": "Seleção URU",
+        "figurinhas": {
+            "URU1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "URU2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "URU20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "COL": {
+        "nome": "Seleção COL",
+        "figurinhas": {
+            "COL1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "COL2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "COL20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "MAR": {
+        "nome": "Seleção MAR",
+        "figurinhas": {
+            "MAR1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "MAR2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MAR20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "SEN": {
+        "nome": "Seleção SEN",
+        "figurinhas": {
+            "SEN1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "SEN2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SEN20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "JPN": {
+        "nome": "Seleção JPN",
+        "figurinhas": {
+            "JPN1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "JPN2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JPN20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "KOR": {
+        "nome": "Seleção KOR",
+        "figurinhas": {
+            "KOR1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "KOR2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KOR20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "AUS": {
+        "nome": "Seleção AUS",
+        "figurinhas": {
+            "AUS1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "AUS2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "AUS20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "ECU": {
+        "nome": "Seleção ECU",
+        "figurinhas": {
+            "ECU1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "ECU2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ECU20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "SUI": {
+        "nome": "Seleção SUI",
+        "figurinhas": {
+            "SUI1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "SUI2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SUI20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "DEN": {
+        "nome": "Seleção DEN",
+        "figurinhas": {
+            "DEN1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "DEN2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "DEN20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "SRB": {
+        "nome": "Seleção SRB",
+        "figurinhas": {
+            "SRB1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "SRB2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SRB20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "POL": {
+        "nome": "Seleção POL",
+        "figurinhas": {
+            "POL1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "POL2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "POL20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "UKR": {
+        "nome": "Seleção UKR",
+        "figurinhas": {
+            "UKR1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "UKR2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UKR20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "SWE": {
+        "nome": "Seleção SWE",
+        "figurinhas": {
+            "SWE1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "SWE2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SWE20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "TUR": {
+        "nome": "Seleção TUR",
+        "figurinhas": {
+            "TUR1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "TUR2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUR20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "EGY": {
+        "nome": "Seleção EGY",
+        "figurinhas": {
+            "EGY1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "EGY2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "EGY20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "NGA": {
+        "nome": "Seleção NGA",
+        "figurinhas": {
+            "NGA1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "NGA2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NGA20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "GHA": {
+        "nome": "Seleção GHA",
+        "figurinhas": {
+            "GHA1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "GHA2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "GHA20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "TUN": {
+        "nome": "Seleção TUN",
+        "figurinhas": {
+            "TUN1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "TUN2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "TUN20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "ALG": {
+        "nome": "Seleção ALG",
+        "figurinhas": {
+            "ALG1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "ALG2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "ALG20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "CMR": {
+        "nome": "Seleção CMR",
+        "figurinhas": {
+            "CMR1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "CMR2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CMR20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "MLI": {
+        "nome": "Seleção MLI",
+        "figurinhas": {
+            "MLI1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "MLI2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "MLI20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "KSA": {
+        "nome": "Seleção KSA",
+        "figurinhas": {
+            "KSA1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "KSA2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "KSA20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "IRN": {
+        "nome": "Seleção IRN",
+        "figurinhas": {
+            "IRN1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "IRN2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRN20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "IRQ": {
+        "nome": "Seleção IRQ",
+        "figurinhas": {
+            "IRQ1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "IRQ2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "IRQ20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "UAE": {
+        "nome": "Seleção UAE",
+        "figurinhas": {
+            "UAE1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "UAE2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UAE20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "UZB": {
+        "nome": "Seleção UZB",
+        "figurinhas": {
+            "UZB1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "UZB2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "UZB20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "PAN": {
+        "nome": "Seleção PAN",
+        "figurinhas": {
+            "PAN1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "PAN2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAN20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "CRC": {
+        "nome": "Seleção CRC",
+        "figurinhas": {
+            "CRC1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "CRC2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "CRC20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "JAM": {
+        "nome": "Seleção JAM",
+        "figurinhas": {
+            "JAM1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "JAM2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "JAM20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "HON": {
+        "nome": "Seleção HON",
+        "figurinhas": {
+            "HON1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "HON2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "HON20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "SLV": {
+        "nome": "Seleção SLV",
+        "figurinhas": {
+            "SLV1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "SLV2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "SLV20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "NZL": {
+        "nome": "Seleção NZL",
+        "figurinhas": {
+            "NZL1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "NZL2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "NZL20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    },
+    "PAR": {
+        "nome": "Seleção PAR",
+        "figurinhas": {
+            "PAR1": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": true
+            },
+            "PAR2": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR3": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR4": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR5": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR6": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR7": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR8": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR9": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR10": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR11": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR12": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR13": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR14": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR15": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR16": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR17": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR18": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR19": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            },
+            "PAR20": {
+                "qtd": 0,
+                "status": "falta",
+                "is_shiny": false
+            }
+        }
+    }
+}
