@@ -83,6 +83,4 @@ def exportar_repetidas_whatsapp(album):
     else:
         print("\nVocê ainda não tem figurinhas repetidas para trocar.")
 
-# Carrega o álbum salvo ou cria um novo se não existir
-meu_album = carregar_dados()
 

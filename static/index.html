@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Álbum Copa 2026</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-title">🏆 Meu Álbum 2026</div>
+    <nav>
+      <button class="nav-btn active" data-page="album">📖 Gerenciar Álbum</button>
+      <button class="nav-btn" data-page="stats">📊 Estatísticas</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <!-- PÁGINA: GERENCIAR ÁLBUM -->
+    <section id="page-album" class="page active">
+      <h1>📖 Gerenciar Figurinhas</h1>
+      <p class="hint">👆 <strong>Dica:</strong> Clique esquerdo na figurinha para <strong>+1</strong>, clique direito para <strong>-1</strong>.</p>
+
+      <div class="select-wrap">
+        <label for="selecao-select">Seleção:</label>
+        <select id="selecao-select"></select>
+      </div>
+
+      <h2 id="selecao-nome"></h2>
+
+      <div id="grid-figurinhas" class="sticker-grid"></div>
+    </section>
+
+    <!-- PÁGINA: ESTATÍSTICAS -->
+    <section id="page-stats" class="page">
+      <h1>📊 Progresso do Álbum</h1>
+
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="progress-label" class="progress-label"></p>
+      </div>
+
+      <div class="metrics">
+        <div class="metric-card">
+          <span class="metric-icon">✅</span>
+          <span class="metric-label">Únicas Adquiridas</span>
+          <span id="stat-adquiridas" class="metric-value">—</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-icon">❌</span>
+          <span class="metric-label">Faltantes</span>
+          <span id="stat-faltam" class="metric-value">—</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-icon">🔄</span>
+          <span class="metric-label">Repetidas para Troca</span>
+          <span id="stat-repetidas" class="metric-value">—</span>
+        </div>
+      </div>
+
+      <h2>Por Seleção</h2>
+      <div id="stats-table-wrap">
+        <table class="stats-table">
+          <thead>
+            <tr>
+              <th>Seleção</th>
+              <th>Adquiridas</th>
+              <th>Faltam</th>
+              <th>Repetidas</th>
+              <th>Progresso</th>
+            </tr>
+          </thead>
+          <tbody id="stats-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
