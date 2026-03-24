@@ -132,15 +132,15 @@ async function loadStats() {
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><strong>${key}</strong> — ${sel.nome}</td>
+      <td><span class="team-badge">${key}</span>${sel.nome}</td>
       <td>${adq}</td>
       <td>${falt}</td>
       <td>${rep}</td>
       <td>
         <div class="mini-bar-wrap">
-          <div class="mini-bar" style="width:${pct}%"></div>
+          <div class="mini-bar-track"><div class="mini-bar" style="width:${pct}%"></div></div>
+          <span class="mini-pct">${pct}%</span>
         </div>
-        <span style="font-size:11px;color:#8b949e;margin-left:6px">${pct}%</span>
       </td>
     `;
     tbody.appendChild(tr);
