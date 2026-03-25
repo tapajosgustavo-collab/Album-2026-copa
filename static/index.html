@@ -52,22 +52,30 @@
           <h1>Gerenciar Álbum</h1>
           <p class="page-desc">Clique para <strong>+1</strong> · Botão direito para <strong>-1</strong></p>
         </div>
-        <select id="selecao-select"></select>
       </div>
 
-      <div class="team-header">
-        <span id="team-flag" class="team-flag"></span>
-        <div class="team-info">
-          <span id="selecao-nome" class="team-name"></span>
-          <div class="team-progress-wrap">
-            <div class="team-progress-track">
-              <div id="team-progress-fill" class="team-progress-fill"></div>
-            </div>
-            <span id="team-progress-label" class="team-progress-label"></span>
-          </div>
+      <!-- Abas de grupos -->
+      <div class="group-tabs-wrap">
+        <div class="group-tabs">
+          <button class="group-tab" data-view="todas">Todas</button>
+          <button class="group-tab" data-view="fwc">🏆 FWC</button>
+          <button class="group-tab active" data-view="A">Grupo A</button>
+          <button class="group-tab" data-view="B">Grupo B</button>
+          <button class="group-tab" data-view="C">Grupo C</button>
+          <button class="group-tab" data-view="D">Grupo D</button>
+          <button class="group-tab" data-view="E">Grupo E</button>
+          <button class="group-tab" data-view="F">Grupo F</button>
+          <button class="group-tab" data-view="G">Grupo G</button>
+          <button class="group-tab" data-view="H">Grupo H</button>
+          <button class="group-tab" data-view="I">Grupo I</button>
+          <button class="group-tab" data-view="J">Grupo J</button>
+          <button class="group-tab" data-view="K">Grupo K</button>
+          <button class="group-tab" data-view="L">Grupo L</button>
+          <button class="group-tab tab-pending" data-view="pendentes">⏳ Pendentes</button>
         </div>
       </div>
 
+      <!-- Filtros de figurinha -->
       <div class="filter-bar">
         <button class="filter-btn active" data-filter="todas">Todas</button>
         <button class="filter-btn" data-filter="falta">Faltam</button>
@@ -76,7 +84,8 @@
         <button class="filter-btn" data-filter="shiny">✨ Shiny</button>
       </div>
 
-      <div id="grid-figurinhas" class="sticker-grid"></div>
+      <!-- Conteúdo dinâmico -->
+      <div id="album-sections"></div>
     </section>
 
     <!-- PÁGINA: ESTATÍSTICAS -->
@@ -142,7 +151,6 @@
   </main>
 
   <div id="toast" class="toast"></div>
-
   <script src="/static/script.js"></script>
 </body>
 </html>
