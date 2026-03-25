@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity,
-  Image, StyleSheet, ActivityIndicator, Dimensions
+  Image, StyleSheet, ActivityIndicator, Dimensions, Modal, Share
 } from 'react-native';
+import * as Clipboard from 'expo-clipboard';
 import { getAlbum, increment, decrement } from '../api';
 import { GROUPS, flagUrl } from '../groups';
 
@@ -120,6 +121,92 @@ const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded }
   );
 });
 
+// ── Trade Modal ───────────────────────────────────────────────────────────────
+function TradeModal({ visible, onClose, album }) {
+  const repetidas = [];
+  const faltam    = [];
+
+  for (const sel of Object.values(album)) {
+    for (const [cod, f] of Object.entries(sel.figurinhas)) {
+      if (f.qtd > 1) repetidas.push({ cod, qtd: f.qtd - 1 });
+      if (f.qtd === 0) faltam.push(cod);
+    }
+  }
+
+  const texto =
+    `🏆 *Álbum Copa 2026 - Lista para Troca*\n\n` +
+    `🔄 *TENHO REPETIDAS:*\n${repetidas.length ? repetidas.map(r => `${r.cod} (×${r.qtd})`).join(', ') : 'Nenhuma'}\n\n` +
+    `❌ *PRECISO:*\n${faltam.length ? faltam.join(', ') : 'Nenhuma'}\n\n` +
+    `📲 Me chama pra trocar!`;
+
+  async function handleShare() {
+    await Share.share({ message: texto });
+  }
+
+  async function handleCopy() {
+    await Clipboard.setStringAsync(texto);
+    onClose();
+  }
+
+  return (
+    <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
+      <View style={s.modalOverlay}>
+        <View style={s.modalBox}>
+          {/* Header */}
+          <View style={s.modalHeader}>
+            <Text style={s.modalTitle}>🔄 Lista para Troca</Text>
+            <TouchableOpacity style={s.modalClose} onPress={onClose}>
+              <Text style={s.modalCloseTxt}>✕</Text>
+            </TouchableOpacity>
+          </View>
+
+          <ScrollView style={s.modalBody} contentContainerStyle={{ gap: 20 }}>
+            {/* Repetidas */}
+            <View>
+              <Text style={s.tradeLabel}>🔄 TENHO REPETIDAS</Text>
+              <View style={s.tagWrap}>
+                {repetidas.length
+                  ? repetidas.map(r => (
+                      <View key={r.cod} style={s.tagRep}>
+                        <Text style={s.tagRepTxt}>{r.cod} ×{r.qtd}</Text>
+                      </View>
+                    ))
+                  : <Text style={s.tradeEmpty}>Nenhuma repetida ainda</Text>
+                }
+              </View>
+            </View>
+
+            {/* Faltam */}
+            <View>
+              <Text style={[s.tradeLabel, s.tradeLabelRed]}>❌ PRECISO</Text>
+              <View style={s.tagWrap}>
+                {faltam.length
+                  ? faltam.map(cod => (
+                      <View key={cod} style={s.tagFalta}>
+                        <Text style={s.tagFaltaTxt}>{cod}</Text>
+                      </View>
+                    ))
+                  : <Text style={s.tradeEmpty}>Coleção completa! 🏆</Text>
+                }
+              </View>
+            </View>
+          </ScrollView>
+
+          {/* Footer */}
+          <View style={s.modalFooter}>
+            <TouchableOpacity style={s.tradeBtnCopy} onPress={handleCopy}>
+              <Text style={s.tradeBtnTxt}>📋 Copiar texto</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={s.tradeBtnShare} onPress={handleShare}>
+              <Text style={[s.tradeBtnTxt, { color: '#25d366' }]}>💬 Compartilhar</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  );
+}
+
 // ── Missing Team ──────────────────────────────────────────────────────────────
 function MissingTeam({ nome, cod }) {
   return (
@@ -156,11 +243,12 @@ function PendingSlot({ pending, album, filter, onInc, onDec }) {
 
 // ── Main Screen ───────────────────────────────────────────────────────────────
 export default function AlbumScreen() {
-  const [album, setAlbum]     = useState({});
-  const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState(null);
-  const [view, setView]       = useState('A');
-  const [filter, setFilter]   = useState('todas');
+  const [album, setAlbum]       = useState({});
+  const [loading, setLoading]   = useState(true);
+  const [error, setError]       = useState(null);
+  const [view, setView]         = useState('A');
+  const [filter, setFilter]     = useState('todas');
+  const [tradeOpen, setTradeOpen] = useState(false);
 
   useEffect(() => { loadAlbum(); }, []);
 
@@ -267,6 +355,13 @@ export default function AlbumScreen() {
 
   return (
     <View style={s.root}>
+      <TradeModal visible={tradeOpen} onClose={() => setTradeOpen(false)} album={album} />
+
+      {/* Botão flutuante */}
+      <TouchableOpacity style={s.fab} onPress={() => setTradeOpen(true)}>
+        <Text style={s.fabTxt}>🔄</Text>
+      </TouchableOpacity>
+
       {/* Group Tabs */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.tabsWrap} contentContainerStyle={s.tabsContent}>
         {TABS.map(tab => (
@@ -370,4 +465,29 @@ const s = StyleSheet.create({
   pendingIcon: { fontSize: 20 },
   pendingTitle: { color: 'orange', fontSize: 15, fontWeight: '700', marginBottom: 2 },
   pendingSub: { color: T.muted, fontSize: 11 },
+
+  // FAB
+  fab: { position: 'absolute', bottom: 24, right: 20, width: 54, height: 54, borderRadius: 27, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.green, alignItems: 'center', justifyContent: 'center', zIndex: 50, shadowColor: T.green, shadowOpacity: 0.4, shadowRadius: 10, elevation: 8 },
+  fabTxt: { fontSize: 24 },
+
+  // Trade Modal
+  modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.7)', justifyContent: 'flex-end' },
+  modalBox: { backgroundColor: T.surface, borderTopLeftRadius: 20, borderTopRightRadius: 20, borderWidth: 1, borderColor: T.border2, maxHeight: '80%' },
+  modalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 20, borderBottomWidth: 1, borderBottomColor: T.border },
+  modalTitle: { color: T.text, fontSize: 18, fontWeight: '800', letterSpacing: 1 },
+  modalClose: { backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 8, width: 32, height: 32, alignItems: 'center', justifyContent: 'center' },
+  modalCloseTxt: { color: T.muted, fontSize: 14 },
+  modalBody: { padding: 20 },
+  modalFooter: { flexDirection: 'row', gap: 10, padding: 16, borderTopWidth: 1, borderTopColor: T.border },
+  tradeLabel: { color: T.blue, fontSize: 11, fontWeight: '800', letterSpacing: 2, textTransform: 'uppercase', marginBottom: 10, backgroundColor: 'rgba(68,138,255,0.1)', paddingHorizontal: 10, paddingVertical: 5, borderRadius: 6, alignSelf: 'flex-start' },
+  tradeLabelRed: { color: T.red, backgroundColor: 'rgba(255,82,82,0.1)' },
+  tagWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
+  tagRep: { backgroundColor: 'rgba(68,138,255,0.12)', borderWidth: 1, borderColor: 'rgba(68,138,255,0.25)', borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
+  tagRepTxt: { color: T.blue, fontSize: 12, fontWeight: '700' },
+  tagFalta: { backgroundColor: 'rgba(255,82,82,0.08)', borderWidth: 1, borderColor: 'rgba(255,82,82,0.2)', borderRadius: 6, paddingHorizontal: 10, paddingVertical: 4 },
+  tagFaltaTxt: { color: '#ff7575', fontSize: 12, fontWeight: '700' },
+  tradeEmpty: { color: T.muted, fontSize: 13, fontStyle: 'italic' },
+  tradeBtnCopy: { flex: 1, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border2, borderRadius: 10, paddingVertical: 12, alignItems: 'center' },
+  tradeBtnShare: { flex: 1, backgroundColor: 'rgba(37,211,102,0.1)', borderWidth: 1, borderColor: 'rgba(37,211,102,0.3)', borderRadius: 10, paddingVertical: 12, alignItems: 'center' },
+  tradeBtnTxt: { color: T.text, fontSize: 13, fontWeight: '700' },
 });
