@@ -8,16 +8,38 @@
 </head>
 <body>
 
+  <div class="bg-blob blob1"></div>
+  <div class="bg-blob blob2"></div>
+  <div class="bg-blob blob3"></div>
+
   <aside class="sidebar">
     <div class="sidebar-hero">
-      <span class="sidebar-trophy">🏆</span>
-      <div class="sidebar-title">Álbum Copa 2026</div>
-      <div class="sidebar-subtitle">USA · MEX · CAN</div>
+      <span class="trophy-icon">🏆</span>
+      <h2 class="brand-title">Álbum Copa</h2>
+      <p class="brand-year">2026</p>
+      <p class="brand-hosts">USA · MEX · CAN</p>
     </div>
+
+    <div class="sidebar-progress">
+      <div class="sp-label">
+        <span>Coleção geral</span>
+        <span id="sidebar-pct">0%</span>
+      </div>
+      <div class="sp-track">
+        <div id="sidebar-fill" class="sp-fill" style="width:0%"></div>
+      </div>
+      <p id="sidebar-count" class="sp-count">— de 980</p>
+    </div>
+
     <nav class="sidebar-nav">
-      <button class="nav-btn active" data-page="album">📖 Gerenciar Álbum</button>
-      <button class="nav-btn" data-page="stats">📊 Estatísticas</button>
+      <button class="nav-btn active" data-page="album">
+        <span class="nav-icon">📖</span><span>Gerenciar Álbum</span>
+      </button>
+      <button class="nav-btn" data-page="stats">
+        <span class="nav-icon">📊</span><span>Estatísticas</span>
+      </button>
     </nav>
+
     <div class="sidebar-footer">FIFA WORLD CUP 2026</div>
   </aside>
 
@@ -26,16 +48,33 @@
     <!-- PÁGINA: GERENCIAR ÁLBUM -->
     <section id="page-album" class="page active">
       <div class="page-header">
-        <h1>Gerenciar Figurinhas</h1>
-        <p>Clique esquerdo para <strong>+1</strong> · Clique direito para <strong>-1</strong></p>
-      </div>
-
-      <div class="select-wrap">
-        <label for="selecao-select">Seleção</label>
+        <div class="page-header-left">
+          <h1>Gerenciar Álbum</h1>
+          <p class="page-desc">Clique para <strong>+1</strong> · Botão direito para <strong>-1</strong></p>
+        </div>
         <select id="selecao-select"></select>
       </div>
 
-      <div id="selecao-nome"></div>
+      <div class="team-header">
+        <span id="team-flag" class="team-flag"></span>
+        <div class="team-info">
+          <span id="selecao-nome" class="team-name"></span>
+          <div class="team-progress-wrap">
+            <div class="team-progress-track">
+              <div id="team-progress-fill" class="team-progress-fill"></div>
+            </div>
+            <span id="team-progress-label" class="team-progress-label"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="todas">Todas</button>
+        <button class="filter-btn" data-filter="falta">Faltam</button>
+        <button class="filter-btn" data-filter="tenho">Tenho</button>
+        <button class="filter-btn" data-filter="repetida">Repetidas</button>
+        <button class="filter-btn" data-filter="shiny">✨ Shiny</button>
+      </div>
 
       <div id="grid-figurinhas" class="sticker-grid"></div>
     </section>
@@ -43,32 +82,43 @@
     <!-- PÁGINA: ESTATÍSTICAS -->
     <section id="page-stats" class="page">
       <div class="page-header">
-        <h1>Progresso do Álbum</h1>
-        <p>Acompanhe sua coleção em tempo real</p>
+        <div class="page-header-left">
+          <h1>Estatísticas</h1>
+          <p class="page-desc">Acompanhe sua coleção em tempo real</p>
+        </div>
       </div>
 
-      <div class="progress-wrap">
-        <div class="progress-track">
-          <div id="progress-fill" class="progress-fill" style="width:0%"></div>
+      <div class="progress-hero">
+        <div class="progress-hero-bar">
+          <div id="progress-fill" class="progress-fill-hero" style="width:0%"></div>
         </div>
-        <p id="progress-label" class="progress-label"></p>
+        <p id="progress-label" class="progress-hero-label"></p>
       </div>
 
       <div class="metrics">
-        <div class="metric-card">
-          <span class="metric-icon">✅</span>
-          <span class="metric-label">Únicas Adquiridas</span>
+        <div class="metric-card green">
+          <div class="metric-top">
+            <span class="metric-icon">✅</span>
+            <span class="metric-label">Adquiridas</span>
+          </div>
           <span id="stat-adquiridas" class="metric-value">—</span>
+          <span class="metric-sub">figurinhas únicas</span>
         </div>
-        <div class="metric-card">
-          <span class="metric-icon">❌</span>
-          <span class="metric-label">Faltantes</span>
+        <div class="metric-card red">
+          <div class="metric-top">
+            <span class="metric-icon">❌</span>
+            <span class="metric-label">Faltantes</span>
+          </div>
           <span id="stat-faltam" class="metric-value">—</span>
+          <span class="metric-sub">para completar</span>
         </div>
-        <div class="metric-card">
-          <span class="metric-icon">🔄</span>
-          <span class="metric-label">Repetidas para Troca</span>
+        <div class="metric-card blue">
+          <div class="metric-top">
+            <span class="metric-icon">🔄</span>
+            <span class="metric-label">Repetidas</span>
+          </div>
           <span id="stat-repetidas" class="metric-value">—</span>
+          <span class="metric-sub">para trocar</span>
         </div>
       </div>
 
@@ -90,6 +140,8 @@
     </section>
 
   </main>
+
+  <div id="toast" class="toast"></div>
 
   <script src="/static/script.js"></script>
 </body>

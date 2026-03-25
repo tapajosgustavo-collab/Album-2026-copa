@@ -1,5 +1,18 @@
+const FLAGS = {
+  FWC:'🌍', USA:'🇺🇸', MEX:'🇲🇽', CAN:'🇨🇦', BRA:'🇧🇷', ARG:'🇦🇷',
+  FRA:'🇫🇷', ENG:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', GER:'🇩🇪', ESP:'🇪🇸', ITA:'🇮🇹', POR:'🇵🇹',
+  NED:'🇳🇱', BEL:'🇧🇪', CRO:'🇭🇷', URU:'🇺🇾', COL:'🇨🇴', MAR:'🇲🇦',
+  SEN:'🇸🇳', JPN:'🇯🇵', KOR:'🇰🇷', AUS:'🇦🇺', ECU:'🇪🇨', SUI:'🇨🇭',
+  DEN:'🇩🇰', SRB:'🇷🇸', POL:'🇵🇱', UKR:'🇺🇦', SWE:'🇸🇪', TUR:'🇹🇷',
+  EGY:'🇪🇬', NGA:'🇳🇬', GHA:'🇬🇭', TUN:'🇹🇳', ALG:'🇩🇿', CMR:'🇨🇲',
+  MLI:'🇲🇱', KSA:'🇸🇦', IRN:'🇮🇷', IRQ:'🇮🇶', UAE:'🇦🇪', UZB:'🇺🇿',
+  PAN:'🇵🇦', CRC:'🇨🇷', JAM:'🇯🇲', HON:'🇭🇳', SLV:'🇸🇻', NZL:'🇳🇿', PAR:'🇵🇾'
+};
+
 let album = {};
 let currentSelecao = null;
+let activeFilter = 'todas';
+let toastTimeout = null;
 
 // --- NAVEGAÇÃO ---
 document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -12,6 +25,40 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
   });
 });
 
+// --- FILTROS ---
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    applyFilter();
+  });
+});
+
+function applyFilter() {
+  document.querySelectorAll('.sticker-card').forEach(card => {
+    if (activeFilter === 'todas') { card.classList.remove('hidden'); return; }
+    const cls = card.className;
+    const match =
+      (activeFilter === 'falta'    && cls.includes('falta'))    ||
+      (activeFilter === 'tenho'    && cls.includes('tenho'))    ||
+      (activeFilter === 'repetida' && cls.includes('repetida')) ||
+      (activeFilter === 'shiny'    && cls.includes('shiny'));
+    card.classList.toggle('hidden', !match);
+  });
+}
+
+// --- TOAST ---
+function showToast(msg, color) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.style.borderLeftWidth = color ? '3px' : '1px';
+  toast.style.borderLeftColor = color || '';
+  if (toastTimeout) clearTimeout(toastTimeout);
+  toast.classList.add('show');
+  toastTimeout = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
 // --- CARREGAR ÁLBUM ---
 async function loadAlbum() {
   const res = await fetch('/api/album');
@@ -22,15 +69,19 @@ async function loadAlbum() {
   for (const key of Object.keys(album)) {
     const opt = document.createElement('option');
     opt.value = key;
-    opt.textContent = `${key} — ${album[key].nome}`;
+    opt.textContent = `${FLAGS[key] || '🏳️'} ${key} — ${album[key].nome}`;
     select.appendChild(opt);
   }
 
   currentSelecao = select.value;
   renderGrid(currentSelecao);
+  updateSidebarProgress();
 
   select.addEventListener('change', () => {
     currentSelecao = select.value;
+    activeFilter = 'todas';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('[data-filter="todas"]').classList.add('active');
     renderGrid(currentSelecao);
   });
 }
@@ -38,7 +89,10 @@ async function loadAlbum() {
 // --- RENDERIZAR GRID ---
 function renderGrid(selKey) {
   const sel = album[selKey];
+  document.getElementById('team-flag').textContent = FLAGS[selKey] || '🏳️';
   document.getElementById('selecao-nome').textContent = sel.nome;
+  updateTeamProgress(selKey);
+
   const grid = document.getElementById('grid-figurinhas');
   grid.innerHTML = '';
 
@@ -48,26 +102,43 @@ function renderGrid(selKey) {
     card.dataset.cod = cod;
 
     const { emoji, status } = getCardInfo(dados);
-
     card.innerHTML = `
       <span class="sticker-emoji">${emoji}</span>
       <span class="sticker-cod">${cod}</span>
       <span class="sticker-status">${status}</span>
     `;
 
-    // Clique esquerdo: +1
     card.addEventListener('click', () => handleIncrement(cod, card));
-
-    // Clique direito: -1
-    card.addEventListener('contextmenu', e => {
-      e.preventDefault();
-      handleDecrement(cod, card);
-    });
+    card.addEventListener('contextmenu', e => { e.preventDefault(); handleDecrement(cod, card); });
 
     grid.appendChild(card);
   }
+
+  applyFilter();
 }
 
+// --- PROGRESSO DA SELEÇÃO ---
+function updateTeamProgress(selKey) {
+  const sel = album[selKey];
+  const total = Object.keys(sel.figurinhas).length;
+  const adq = Object.values(sel.figurinhas).filter(f => f.qtd > 0).length;
+  const pct = Math.round((adq / total) * 100);
+  document.getElementById('team-progress-fill').style.width = `${pct}%`;
+  document.getElementById('team-progress-label').textContent = `${adq}/${total} — ${pct}%`;
+}
+
+// --- PROGRESSO GERAL (SIDEBAR) ---
+function updateSidebarProgress() {
+  const total = 980;
+  const adq = Object.values(album).reduce((acc, s) =>
+    acc + Object.values(s.figurinhas).filter(f => f.qtd > 0).length, 0);
+  const pct = ((adq / total) * 100).toFixed(1);
+  document.getElementById('sidebar-fill').style.width = `${pct}%`;
+  document.getElementById('sidebar-pct').textContent = `${pct}%`;
+  document.getElementById('sidebar-count').textContent = `${adq} de ${total}`;
+}
+
+// --- CARD HELPERS ---
 function getCardClass(dados) {
   const shiny = dados.is_shiny ? ' shiny' : '';
   if (dados.qtd === 0) return `sticker-card falta${shiny}`;
@@ -78,7 +149,7 @@ function getCardClass(dados) {
 function getCardInfo(dados) {
   if (dados.qtd === 0) return { emoji: '❌', status: 'Falta' };
   if (dados.qtd === 1) return { emoji: '✅', status: 'Tenho' };
-  return { emoji: '🔄', status: `Repetida (${dados.qtd})` };
+  return { emoji: '🔄', status: `×${dados.qtd}` };
 }
 
 // --- INCREMENTAR ---
@@ -87,6 +158,11 @@ async function handleIncrement(cod, card) {
   const data = await res.json();
   album[currentSelecao].figurinhas[cod].qtd = data.qtd;
   updateCard(card, album[currentSelecao].figurinhas[cod]);
+  updateTeamProgress(currentSelecao);
+  updateSidebarProgress();
+  const info = getCardInfo(album[currentSelecao].figurinhas[cod]);
+  const color = data.qtd === 1 ? '#00e676' : '#448aff';
+  showToast(`${cod}  +1 — ${info.status}`, color);
 }
 
 // --- DECREMENTAR ---
@@ -95,6 +171,9 @@ async function handleDecrement(cod, card) {
   const data = await res.json();
   album[currentSelecao].figurinhas[cod].qtd = data.qtd;
   updateCard(card, album[currentSelecao].figurinhas[cod]);
+  updateTeamProgress(currentSelecao);
+  updateSidebarProgress();
+  showToast(`${cod}  -1`, '#ff5252');
 }
 
 function updateCard(card, dados) {
@@ -102,15 +181,13 @@ function updateCard(card, dados) {
   const { emoji, status } = getCardInfo(dados);
   card.querySelector('.sticker-emoji').textContent = emoji;
   card.querySelector('.sticker-status').textContent = status;
+  applyFilter();
 }
 
 // --- ESTATÍSTICAS ---
 async function loadStats() {
-  const [statsRes, albumRes] = await Promise.all([
-    fetch('/api/estatisticas'),
-    Promise.resolve(album),
-  ]);
-  const stats = await statsRes.json();
+  const res = await fetch('/api/estatisticas');
+  const stats = await res.json();
 
   document.getElementById('progress-fill').style.width = `${stats.porcentagem}%`;
   document.getElementById('progress-label').innerHTML =
@@ -120,7 +197,6 @@ async function loadStats() {
   document.getElementById('stat-faltam').textContent = stats.faltam;
   document.getElementById('stat-repetidas').textContent = stats.repetidas;
 
-  // Tabela por seleção
   const tbody = document.getElementById('stats-tbody');
   tbody.innerHTML = '';
   for (const [key, sel] of Object.entries(album)) {
@@ -132,7 +208,7 @@ async function loadStats() {
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><span class="team-badge">${key}</span>${sel.nome}</td>
+      <td><span class="team-badge">${key}</span>${FLAGS[key] || '🏳️'} ${sel.nome}</td>
       <td>${adq}</td>
       <td>${falt}</td>
       <td>${rep}</td>
