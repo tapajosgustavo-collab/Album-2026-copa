@@ -38,6 +38,9 @@
       <button class="nav-btn" data-page="stats">
         <span class="nav-icon">📊</span><span>Estatísticas</span>
       </button>
+      <button class="nav-btn nav-btn-trade" id="btn-trade">
+        <span class="nav-icon">🔄</span><span>Lista para Troca</span>
+      </button>
     </nav>
 
     <div class="sidebar-footer">FIFA WORLD CUP 2026</div>
@@ -149,6 +152,30 @@
     </section>
 
   </main>
+
+  <!-- MODAL: LISTA PARA TROCA -->
+  <div id="trade-overlay" class="trade-overlay hidden">
+    <div class="trade-modal">
+      <div class="trade-modal-header">
+        <h2 class="trade-modal-title">🔄 Lista para Troca</h2>
+        <button id="trade-close" class="trade-close">✕</button>
+      </div>
+      <div class="trade-modal-body">
+        <div class="trade-section">
+          <div class="trade-section-label repetidas-label">🔄 TENHO REPETIDAS</div>
+          <div id="trade-repetidas" class="trade-list"></div>
+        </div>
+        <div class="trade-section">
+          <div class="trade-section-label faltam-label">❌ PRECISO</div>
+          <div id="trade-faltam" class="trade-list"></div>
+        </div>
+      </div>
+      <div class="trade-modal-footer">
+        <button id="btn-copy" class="trade-btn trade-btn-copy">📋 Copiar texto</button>
+        <a id="btn-whatsapp" class="trade-btn trade-btn-whatsapp" target="_blank">💬 Compartilhar WhatsApp</a>
+      </div>
+    </div>
+  </div>
 
   <div id="toast" class="toast"></div>
   <script src="/static/script.js"></script>

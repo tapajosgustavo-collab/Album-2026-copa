@@ -483,5 +483,57 @@ async function loadStats() {
   }
 }
 
+// ─── LISTA PARA TROCA ────────────────────────────────────────────────────────
+document.getElementById('btn-trade').addEventListener('click', openTradeModal);
+document.getElementById('trade-close').addEventListener('click', closeTradeModal);
+document.getElementById('trade-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('trade-overlay')) closeTradeModal();
+});
+
+function openTradeModal() {
+  const repetidas = [];
+  const faltam    = [];
+
+  for (const [, sel] of Object.entries(album)) {
+    for (const [cod, f] of Object.entries(sel.figurinhas)) {
+      if (f.qtd > 1) repetidas.push({ cod, qtd: f.qtd - 1 });
+      if (f.qtd === 0) faltam.push(cod);
+    }
+  }
+
+  // Renderiza tags de repetidas
+  const repEl = document.getElementById('trade-repetidas');
+  repEl.innerHTML = repetidas.length
+    ? repetidas.map(r => `<span class="trade-tag trade-tag-rep">${r.cod} ×${r.qtd}</span>`).join('')
+    : '<span class="trade-empty">Nenhuma repetida ainda</span>';
+
+  // Renderiza tags de faltam
+  const faltEl = document.getElementById('trade-faltam');
+  faltEl.innerHTML = faltam.length
+    ? faltam.map(c => `<span class="trade-tag trade-tag-falta">${c}</span>`).join('')
+    : '<span class="trade-empty">Coleção completa! 🏆</span>';
+
+  // Monta texto para compartilhar
+  const textoRep   = repetidas.length ? repetidas.map(r => `${r.cod} (×${r.qtd})`).join(', ') : 'Nenhuma';
+  const textoFalta = faltam.length    ? faltam.join(', ') : 'Nenhuma';
+  const texto = `🏆 *Álbum Copa 2026 - Lista para Troca*\n\n🔄 *TENHO REPETIDAS:*\n${textoRep}\n\n❌ *PRECISO:*\n${textoFalta}\n\n📲 Me chama pra trocar!`;
+
+  // Copiar
+  document.getElementById('btn-copy').onclick = () => {
+    navigator.clipboard.writeText(texto);
+    showToast('Texto copiado!', 'var(--green)');
+  };
+
+  // WhatsApp
+  document.getElementById('btn-whatsapp').href =
+    `https://wa.me/?text=${encodeURIComponent(texto)}`;
+
+  document.getElementById('trade-overlay').classList.remove('hidden');
+}
+
+function closeTradeModal() {
+  document.getElementById('trade-overlay').classList.add('hidden');
+}
+
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 loadAlbum();
