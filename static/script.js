@@ -1,13 +1,20 @@
-const FLAGS = {
-  FWC:'🌍', USA:'🇺🇸', MEX:'🇲🇽', CAN:'🇨🇦', BRA:'🇧🇷', ARG:'🇦🇷',
-  FRA:'🇫🇷', ENG:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', GER:'🇩🇪', ESP:'🇪🇸', ITA:'🇮🇹', POR:'🇵🇹',
-  NED:'🇳🇱', BEL:'🇧🇪', CRO:'🇭🇷', URU:'🇺🇾', COL:'🇨🇴', MAR:'🇲🇦',
-  SEN:'🇸🇳', JPN:'🇯🇵', KOR:'🇰🇷', AUS:'🇦🇺', ECU:'🇪🇨', SUI:'🇨🇭',
-  DEN:'🇩🇰', SRB:'🇷🇸', POL:'🇵🇱', UKR:'🇺🇦', SWE:'🇸🇪', TUR:'🇹🇷',
-  EGY:'🇪🇬', NGA:'🇳🇬', GHA:'🇬🇭', TUN:'🇹🇳', ALG:'🇩🇿', CMR:'🇨🇲',
-  MLI:'🇲🇱', KSA:'🇸🇦', IRN:'🇮🇷', IRQ:'🇮🇶', UAE:'🇦🇪', UZB:'🇺🇿',
-  PAN:'🇵🇦', CRC:'🇨🇷', JAM:'🇯🇲', HON:'🇭🇳', SLV:'🇸🇻', NZL:'🇳🇿', PAR:'🇵🇾'
+// Mapa de código do álbum → código ISO para flagcdn.com
+const ISO = {
+  FWC:'un',  USA:'us',  MEX:'mx',  CAN:'ca',  BRA:'br',  ARG:'ar',
+  FRA:'fr',  ENG:'gb-eng', GER:'de', ESP:'es', ITA:'it',  POR:'pt',
+  NED:'nl',  BEL:'be',  CRO:'hr',  URU:'uy',  COL:'co',  MAR:'ma',
+  SEN:'sn',  JPN:'jp',  KOR:'kr',  AUS:'au',  ECU:'ec',  SUI:'ch',
+  DEN:'dk',  SRB:'rs',  POL:'pl',  UKR:'ua',  SWE:'se',  TUR:'tr',
+  EGY:'eg',  NGA:'ng',  GHA:'gh',  TUN:'tn',  ALG:'dz',  CMR:'cm',
+  MLI:'ml',  KSA:'sa',  IRN:'ir',  IRQ:'iq',  UAE:'ae',  UZB:'uz',
+  PAN:'pa',  CRC:'cr',  JAM:'jm',  HON:'hn',  SLV:'sv',  NZL:'nz', PAR:'py'
 };
+
+function flagImg(code, size = 32) {
+  const iso = ISO[code];
+  if (!iso) return '';
+  return `<img src="https://flagcdn.com/w${size}/${iso}.png" alt="${code}" class="flag-img">`;
+}
 
 let album = {};
 let currentSelecao = null;
@@ -69,7 +76,7 @@ async function loadAlbum() {
   for (const key of Object.keys(album)) {
     const opt = document.createElement('option');
     opt.value = key;
-    opt.textContent = `${FLAGS[key] || '🏳️'} ${key} — ${album[key].nome}`;
+    opt.textContent = `${key} — ${album[key].nome}`;
     select.appendChild(opt);
   }
 
@@ -89,7 +96,7 @@ async function loadAlbum() {
 // --- RENDERIZAR GRID ---
 function renderGrid(selKey) {
   const sel = album[selKey];
-  document.getElementById('team-flag').textContent = FLAGS[selKey] || '🏳️';
+  document.getElementById('team-flag').innerHTML = flagImg(selKey, 48);
   document.getElementById('selecao-nome').textContent = sel.nome;
   updateTeamProgress(selKey);
 
@@ -208,7 +215,7 @@ async function loadStats() {
 
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><span class="team-badge">${key}</span>${FLAGS[key] || '🏳️'} ${sel.nome}</td>
+      <td><span class="team-badge">${key}</span>${flagImg(key, 24)} ${sel.nome}</td>
       <td>${adq}</td>
       <td>${falt}</td>
       <td>${rep}</td>
