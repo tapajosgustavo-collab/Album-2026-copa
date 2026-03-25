@@ -14,10 +14,10 @@ const GAP = 5;
 const CARD_W = (SW - GRID_PAD * 2 - GAP * (NUM_COLS - 1)) / NUM_COLS;
 
 const T = {
-  bg: '#06080f', surface: '#0b1018', surface2: '#0f1825', surface3: '#162232',
-  border: '#1a2b3a', border2: '#24384d', text: '#ddeaf5', muted: '#4d6b82',
-  gold: '#f5c842', green: '#00e676', greenDim: '#00c853',
-  blue: '#448aff', red: '#ff5252',
+  bg: '#020b1e', surface: '#04112a', surface2: '#071633', surface3: '#0c1e42',
+  border: '#112244', border2: '#1a3060', text: '#e8f2ff', muted: '#4e6e9a',
+  gold: '#f5c518', greenDim: '#00c853', green: '#00e676',
+  blue: '#4d90ff', red: '#e8112d',
 };
 
 const TABS = [

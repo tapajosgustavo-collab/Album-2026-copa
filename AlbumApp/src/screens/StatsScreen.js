@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   View, Text, ScrollView, ActivityIndicator,
   StyleSheet, Image
@@ -7,10 +7,10 @@ import { getStats, getAlbum } from '../api';
 import { flagUrl } from '../groups';
 
 const T = {
-  bg: '#06080f', surface: '#0b1018', surface2: '#0f1825', surface3: '#162232',
-  border: '#1a2b3a', border2: '#24384d', text: '#ddeaf5', muted: '#4d6b82',
-  gold: '#f5c842', green: '#00e676', greenDim: '#00c853',
-  blue: '#448aff', red: '#ff5252',
+  bg: '#020b1e', surface: '#04112a', surface2: '#071633', surface3: '#0c1e42',
+  border: '#112244', border2: '#1a3060', text: '#e8f2ff', muted: '#4e6e9a',
+  gold: '#f5c518', green: '#00e676', greenDim: '#00c853',
+  blue: '#4d90ff', red: '#e8112d',
 };
 
 export default function StatsScreen() {
@@ -81,7 +81,6 @@ export default function StatsScreen() {
       {Object.entries(album).map(([key, sel]) => {
         const total = Object.keys(sel.figurinhas).length;
         const adq   = Object.values(sel.figurinhas).filter(f => f.qtd > 0).length;
-        const rep   = Object.values(sel.figurinhas).reduce((a, f) => a + Math.max(0, f.qtd - 1), 0);
         const p     = Math.round((adq / total) * 100);
         const flag  = flagUrl(key);
         return (

@@ -3,21 +3,22 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #06080f;
-  --surface: #0b1018;
-  --surface2: #0f1825;
-  --surface3: #162232;
-  --border: #1a2b3a;
-  --border2: #24384d;
-  --text: #ddeaf5;
-  --muted: #4d6b82;
-  --gold: #f5c842;
-  --gold2: #c48a0a;
+  --bg: #020b1e;
+  --surface: #04112a;
+  --surface2: #071633;
+  --surface3: #0c1e42;
+  --border: #112244;
+  --border2: #1a3060;
+  --text: #e8f2ff;
+  --muted: #4e6e9a;
+  --gold: #f5c518;
+  --gold2: #c49200;
   --green: #00e676;
   --green-dim: #00c853;
-  --blue: #448aff;
-  --blue-dim: #2962ff;
-  --red: #ff5252;
+  --blue: #4d90ff;
+  --blue-dim: #0038a8;
+  --red: #e8112d;
+  --red-dim: #a80020;
   --radius: 12px;
   --font-display: 'Bebas Neue', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -38,21 +39,48 @@ body {
   overflow-x: hidden;
 }
 
-/* BG BLOBS */
+/* Padrão hexagonal sutil (referência à bola de futebol) */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='98' viewBox='0 0 56 98'%3E%3Cpath d='M28 64L2 50V18L28 4l26 14v32L28 64zm0-8l18-10V26L28 16 10 26v20l18 10z' fill='none' stroke='%23ffffff' stroke-width='0.4' stroke-opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Listra diagonal Copa 2026 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent 0px, transparent 80px,
+    rgba(255,255,255,0.008) 80px, rgba(255,255,255,0.008) 81px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* BG BLOBS — cores oficiais Copa 2026 */
 .bg-blob {
   position: fixed;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(120px);
   pointer-events: none;
   z-index: 0;
-  animation: blobmove 20s ease-in-out infinite alternate;
+  animation: blobmove 22s ease-in-out infinite alternate;
 }
-.blob1 { width: 600px; height: 600px; background: #1a3a6b; opacity: 0.1; top: -200px; left: -150px; }
-.blob2 { width: 450px; height: 450px; background: #6b3a1a; opacity: 0.08; bottom: -100px; right: 150px; animation-delay: -8s; }
-.blob3 { width: 350px; height: 350px; background: #1a6b3a; opacity: 0.07; top: 40%; right: -80px; animation-delay: -4s; }
+/* Azul FIFA */
+.blob1 { width: 700px; height: 700px; background: #0038a8; opacity: 0.12; top: -250px; left: -200px; }
+/* Vermelho Copa */
+.blob2 { width: 500px; height: 500px; background: #c8102e; opacity: 0.09; bottom: -150px; right: 100px; animation-delay: -9s; }
+/* Dourado Troféu */
+.blob3 { width: 400px; height: 400px; background: #f5c518; opacity: 0.06; top: 35%; right: -120px; animation-delay: -5s; }
 @keyframes blobmove {
   from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(50px, 35px) scale(1.12); }
+  to { transform: translate(60px, 40px) scale(1.15); }
 }
 
 /* ===== SIDEBAR ===== */
@@ -74,16 +102,29 @@ body {
 .sidebar-hero {
   padding: 32px 20px 24px;
   text-align: center;
-  background: linear-gradient(180deg, rgba(245,200,66,0.07) 0%, transparent 100%);
+  background: linear-gradient(160deg, rgba(0,56,168,0.18) 0%, rgba(200,16,46,0.08) 60%, transparent 100%);
   border-bottom: 1px solid var(--border);
   position: relative;
+  overflow: hidden;
+}
+/* Listras diagonais Copa no hero */
+.sidebar-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -50deg,
+    transparent 0px, transparent 18px,
+    rgba(255,255,255,0.015) 18px, rgba(255,255,255,0.015) 19px
+  );
+  pointer-events: none;
 }
 .sidebar-hero::after {
   content: '';
   position: absolute;
-  bottom: -1px; left: 15%; right: 15%;
+  bottom: -1px; left: 10%; right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--red), var(--gold), var(--blue), transparent);
 }
 
 .trophy-icon {
@@ -117,11 +158,14 @@ body {
 }
 .brand-hosts {
   font-size: 11px;
-  color: var(--muted);
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-top: 6px;
+  font-weight: 700;
 }
+.host-usa { color: #b22234; }
+.host-mex { color: #006847; }
+.host-can { color: #ff0000; }
 
 /* Sidebar progress */
 .sidebar-progress {
