@@ -169,8 +169,13 @@ async function loadAlbum() {
     updateSidebarProgress();
     renderView(currentView);
   } catch (e) {
-    showToast('Erro ao carregar álbum — verifique se a API está rodando', 'var(--red)');
     console.error('[loadAlbum]', e);
+    document.getElementById('album-sections').innerHTML = `
+      <div style="text-align:center;padding:60px 20px;">
+        <div style="font-size:40px;margin-bottom:12px;">⚠️</div>
+        <p style="color:var(--muted);margin-bottom:20px;">Não foi possível conectar à API.<br>Verifique se o servidor Flask está rodando.</p>
+        <button onclick="loadAlbum()" style="background:var(--surface2);border:1px solid var(--border2);color:var(--text);padding:10px 24px;border-radius:10px;cursor:pointer;font-weight:700;">Tentar novamente</button>
+      </div>`;
   }
 }
 
@@ -557,6 +562,7 @@ function openTradeModal() {
   document.getElementById('btn-copy').onclick = () => {
     navigator.clipboard.writeText(texto);
     showToast('Texto copiado!', 'var(--green)');
+    setTimeout(closeTradeModal, 800);
   };
 
   // WhatsApp

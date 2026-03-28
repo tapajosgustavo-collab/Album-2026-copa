@@ -7,22 +7,24 @@ const getApiUrl = () => {
 
 export const API_URL = getApiUrl();
 
-export async function getAlbum() {
-  const res = await fetch(`${API_URL}/api/album`);
+async function request(url, options) {
+  const res = await fetch(url, options);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   return res.json();
 }
 
-export async function getStats() {
-  const res = await fetch(`${API_URL}/api/estatisticas`);
-  return res.json();
+export function getAlbum() {
+  return request(`${API_URL}/api/album`);
 }
 
-export async function increment(cod) {
-  const res = await fetch(`${API_URL}/api/album/${cod}/increment`, { method: 'POST' });
-  return res.json();
+export function getStats() {
+  return request(`${API_URL}/api/estatisticas`);
 }
 
-export async function decrement(cod) {
-  const res = await fetch(`${API_URL}/api/album/${cod}/decrement`, { method: 'POST' });
-  return res.json();
+export function increment(cod) {
+  return request(`${API_URL}/api/album/${cod}/increment`, { method: 'POST' });
+}
+
+export function decrement(cod) {
+  return request(`${API_URL}/api/album/${cod}/decrement`, { method: 'POST' });
 }

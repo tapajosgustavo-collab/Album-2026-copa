@@ -50,43 +50,5 @@ def carregar_dados(arquivo='album_salvo.json'):
             print(f"[ERRO] Arquivo corrompido, gerando novo álbum: {e}")
     return gerar_album_copa_2026()
 
-def exibir_estatisticas(album):
-    total_figuras = 980
-    adquiridas = 0
-    repetidas = 0
-    
-    for selecao in album.values():
-        for fig in selecao["figurinhas"].values():
-            if fig["qtd"] > 0:
-                adquiridas += 1
-            if fig["qtd"] > 1:
-                repetidas += (fig["qtd"] - 1)
-    
-    porcentagem = (adquiridas / total_figuras) * 100
-    print("\n--- STATUS DO ÁLBUM ---")
-    print(f"Progresso: {adquiridas}/{total_figuras} ({porcentagem:.2f}%)")
-    print(f"Total de Repetidas: {repetidas}")
-    print(f"Faltam: {total_figuras - adquiridas} figurinhas")
-
-def listar_faltantes_por_selecao(album, prefixo):
-    if prefixo in album:
-        faltantes = [k for k, v in album[prefixo]["figurinhas"].items() if v["qtd"] == 0]
-        print(f"\nFaltam em {album[prefixo]['nome']}: {', '.join(faltantes) if faltantes else 'COMPLETA!'}")
-    else:
-        print("Seleção não encontrada. Verifique o prefixo digitado.")
-
-def exportar_repetidas_whatsapp(album):
-    repetidas = []
-    for selecao in album.values():
-        for cod, fig in selecao["figurinhas"].items():
-            if fig["qtd"] > 1:
-                repetidas.append(f"{cod} (x{fig['qtd'] - 1})")
-    
-    if repetidas:
-        texto = "*Minhas Repetidas - Copa 2026:*\n" + ", ".join(repetidas)
-        print("\n--- COPIE O TEXTO ABAIXO PARA O WHATSAPP ---")
-        print(texto)
-    else:
-        print("\nVocê ainda não tem figurinhas repetidas para trocar.")
 
 
