@@ -35,13 +35,19 @@ def gerar_album_copa_2026():
     return album
 
 def salvar_dados(album, arquivo='album_salvo.json'):
-    with open(arquivo, 'w', encoding='utf-8') as f:
-        json.dump(album, f, indent=4, ensure_ascii=False)
+    try:
+        with open(arquivo, 'w', encoding='utf-8') as f:
+            json.dump(album, f, indent=4, ensure_ascii=False)
+    except (IOError, OSError) as e:
+        print(f"[ERRO] Falha ao salvar dados: {e}")
 
 def carregar_dados(arquivo='album_salvo.json'):
     if os.path.exists(arquivo):
-        with open(arquivo, 'r', encoding='utf-8') as f:
-            return json.load(f)
+        try:
+            with open(arquivo, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"[ERRO] Arquivo corrompido, gerando novo álbum: {e}")
     return gerar_album_copa_2026()
 
 def exibir_estatisticas(album):

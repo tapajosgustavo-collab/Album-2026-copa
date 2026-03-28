@@ -264,7 +264,7 @@ export default function AlbumScreen() {
     }
   }
 
-  // Optimistic update: atualiza a UI imediatamente, sincroniza API em background
+  // Optimistic update: atualiza a UI imediatamente, reverte se falhar
   const handleInc = useCallback((cod, selKey) => {
     setAlbum(prev => {
       const qtd = prev[selKey].figurinhas[cod].qtd + 1;
@@ -276,7 +276,19 @@ export default function AlbumScreen() {
         }
       };
     });
-    increment(cod); // fire-and-forget
+    increment(cod).catch(() => {
+      // Reverte se a API falhar
+      setAlbum(prev => {
+        const qtd = Math.max(0, prev[selKey].figurinhas[cod].qtd - 1);
+        return {
+          ...prev,
+          [selKey]: {
+            ...prev[selKey],
+            figurinhas: { ...prev[selKey].figurinhas, [cod]: { ...prev[selKey].figurinhas[cod], qtd } }
+          }
+        };
+      });
+    });
   }, []);
 
   const handleDec = useCallback((cod, selKey) => {
@@ -290,7 +302,19 @@ export default function AlbumScreen() {
         }
       };
     });
-    decrement(cod); // fire-and-forget
+    decrement(cod).catch(() => {
+      // Reverte se a API falhar
+      setAlbum(prev => {
+        const qtd = prev[selKey].figurinhas[cod].qtd + 1;
+        return {
+          ...prev,
+          [selKey]: {
+            ...prev[selKey],
+            figurinhas: { ...prev[selKey].figurinhas, [cod]: { ...prev[selKey].figurinhas[cod], qtd } }
+          }
+        };
+      });
+    });
   }, []);
 
   // Na aba "Todas", times ficam colapsados por padrão para não travar

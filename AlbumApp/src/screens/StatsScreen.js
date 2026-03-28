@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
-  View, Text, ScrollView, ActivityIndicator,
-  StyleSheet, Image
+  View, Text, ScrollView, TouchableOpacity,
+  ActivityIndicator, StyleSheet, Image
 } from 'react-native';
 import { getStats, getAlbum } from '../api';
 import { flagUrl } from '../groups';
@@ -14,22 +14,38 @@ const T = {
 };
 
 export default function StatsScreen() {
-  const [stats, setStats]   = useState(null);
-  const [album, setAlbum]   = useState({});
+  const [stats, setStats]     = useState(null);
+  const [album, setAlbum]     = useState({});
   const [loading, setLoading] = useState(true);
+  const [error, setError]     = useState(null);
 
   useEffect(() => { load(); }, []);
 
   async function load() {
-    const [s, a] = await Promise.all([getStats(), getAlbum()]);
-    setStats(s);
-    setAlbum(a);
-    setLoading(false);
+    try {
+      setError(null);
+      const [s, a] = await Promise.all([getStats(), getAlbum()]);
+      setStats(s);
+      setAlbum(a);
+    } catch {
+      setError('Não foi possível carregar as estatísticas.');
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (loading) return (
     <View style={s.center}>
       <ActivityIndicator size="large" color={T.gold} />
+    </View>
+  );
+
+  if (error) return (
+    <View style={s.center}>
+      <Text style={{ color: T.muted, textAlign: 'center', marginBottom: 16 }}>{error}</Text>
+      <TouchableOpacity style={{ backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border2, borderRadius: 10, paddingVertical: 10, paddingHorizontal: 24 }} onPress={() => { setLoading(true); load(); }}>
+        <Text style={{ color: T.text, fontWeight: '700' }}>Tentar novamente</Text>
+      </TouchableOpacity>
     </View>
   );
 

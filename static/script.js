@@ -162,10 +162,16 @@ function showToast(msg, color) {
 
 // ─── CARREGAR ÁLBUM ──────────────────────────────────────────────────────────
 async function loadAlbum() {
-  const res = await fetch('/api/album');
-  album = await res.json();
-  updateSidebarProgress();
-  renderView(currentView);
+  try {
+    const res = await fetch('/api/album');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    album = await res.json();
+    updateSidebarProgress();
+    renderView(currentView);
+  } catch (e) {
+    showToast('Erro ao carregar álbum — verifique se a API está rodando', 'var(--red)');
+    console.error('[loadAlbum]', e);
+  }
 }
 
 // ─── RENDERIZAR VIEW ─────────────────────────────────────────────────────────
@@ -381,26 +387,42 @@ function renderPendentes(container) {
 async function handleIncrement(card) {
   const cod = card.dataset.cod;
   const selKey = card.dataset.selecao;
-  const res = await fetch(`/api/album/${cod}/increment`, { method: 'POST' });
-  const data = await res.json();
-  album[selKey].figurinhas[cod].qtd = data.qtd;
+  // Optimistic update
+  album[selKey].figurinhas[cod].qtd += 1;
   updateCard(card, album[selKey].figurinhas[cod]);
   updateTeamProgress(selKey);
   updateSidebarProgress();
   const info = getCardInfo(album[selKey].figurinhas[cod]);
-  showToast(`${cod}  +1 — ${info.status}`, data.qtd === 1 ? '#00e676' : '#448aff');
+  showToast(`${cod}  +1 — ${info.status}`, album[selKey].figurinhas[cod].qtd === 1 ? '#00e676' : '#448aff');
+  try {
+    const res = await fetch(`/api/album/${cod}/increment`, { method: 'POST' });
+    if (!res.ok) throw new Error();
+  } catch {
+    album[selKey].figurinhas[cod].qtd -= 1;
+    updateCard(card, album[selKey].figurinhas[cod]);
+    showToast('Erro ao salvar — sem conexão?', 'var(--red)');
+  }
 }
 
 async function handleDecrement(card) {
   const cod = card.dataset.cod;
   const selKey = card.dataset.selecao;
-  const res = await fetch(`/api/album/${cod}/decrement`, { method: 'POST' });
-  const data = await res.json();
-  album[selKey].figurinhas[cod].qtd = data.qtd;
+  const oldQtd = album[selKey].figurinhas[cod].qtd;
+  if (oldQtd <= 0) return;
+  // Optimistic update
+  album[selKey].figurinhas[cod].qtd -= 1;
   updateCard(card, album[selKey].figurinhas[cod]);
   updateTeamProgress(selKey);
   updateSidebarProgress();
   showToast(`${cod}  -1`, '#ff5252');
+  try {
+    const res = await fetch(`/api/album/${cod}/decrement`, { method: 'POST' });
+    if (!res.ok) throw new Error();
+  } catch {
+    album[selKey].figurinhas[cod].qtd = oldQtd;
+    updateCard(card, album[selKey].figurinhas[cod]);
+    showToast('Erro ao salvar — sem conexão?', 'var(--red)');
+  }
 }
 
 function updateCard(card, dados) {
@@ -449,8 +471,16 @@ function getCardInfo(dados) {
 
 // ─── ESTATÍSTICAS ─────────────────────────────────────────────────────────────
 async function loadStats() {
-  const res = await fetch('/api/estatisticas');
-  const stats = await res.json();
+  let stats;
+  try {
+    const res = await fetch('/api/estatisticas');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    stats = await res.json();
+  } catch (e) {
+    showToast('Erro ao carregar estatísticas', 'var(--red)');
+    console.error('[loadStats]', e);
+    return;
+  }
 
   document.getElementById('progress-fill').style.width = `${stats.porcentagem}%`;
   document.getElementById('progress-label').innerHTML =

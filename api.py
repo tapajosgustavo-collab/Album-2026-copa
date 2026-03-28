@@ -18,24 +18,30 @@ def get_album():
 
 @app.route('/api/album/<cod>/increment', methods=['POST'])
 def increment(cod):
-    for selecao in album.values():
-        if cod in selecao['figurinhas']:
-            selecao['figurinhas'][cod]['qtd'] += 1
-            salvar_dados(album)
-            return jsonify({'qtd': selecao['figurinhas'][cod]['qtd']})
-    return jsonify({'error': 'not found'}), 404
+    try:
+        for selecao in album.values():
+            if cod in selecao['figurinhas']:
+                selecao['figurinhas'][cod]['qtd'] += 1
+                salvar_dados(album)
+                return jsonify({'qtd': selecao['figurinhas'][cod]['qtd']})
+        return jsonify({'error': 'not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/api/album/<cod>/decrement', methods=['POST'])
 def decrement(cod):
-    for selecao in album.values():
-        if cod in selecao['figurinhas']:
-            fig = selecao['figurinhas'][cod]
-            if fig['qtd'] > 0:
-                fig['qtd'] -= 1
-                salvar_dados(album)
-            return jsonify({'qtd': fig['qtd']})
-    return jsonify({'error': 'not found'}), 404
+    try:
+        for selecao in album.values():
+            if cod in selecao['figurinhas']:
+                fig = selecao['figurinhas'][cod]
+                if fig['qtd'] > 0:
+                    fig['qtd'] -= 1
+                    salvar_dados(album)
+                return jsonify({'qtd': fig['qtd']})
+        return jsonify({'error': 'not found'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route('/api/estatisticas')
@@ -54,4 +60,6 @@ def estatisticas():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    import os
+    debug = os.environ.get('FLASK_DEBUG', '1') == '1'
+    app.run(host='0.0.0.0', debug=debug)
