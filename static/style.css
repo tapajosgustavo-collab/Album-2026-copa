@@ -289,6 +289,22 @@ body::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.search-wrap { display: flex; align-items: center; }
+.search-input {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  width: 260px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input::placeholder { color: var(--muted); }
+.search-input:focus { border-color: var(--gold); }
+
 .page-desc {
   color: var(--muted);
   font-size: 13px;
@@ -393,6 +409,19 @@ select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(245,200,66,
 .group-tab.active { background: rgba(245,200,66,0.1); border-color: var(--gold); color: var(--gold); }
 .group-tab.tab-pending { border-style: dashed; }
 .group-tab.tab-pending.active { background: rgba(255,168,0,0.1); border-color: orange; color: orange; border-style: dashed; }
+
+.tab-pct {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--green-dim);
+  background: rgba(0,200,83,0.1);
+  padding: 1px 5px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.group-tab.active .tab-pct { color: var(--gold); background: rgba(245,200,66,0.15); }
 
 /* ===== GROUP BLOCK ===== */
 .group-block { margin-bottom: 40px; }

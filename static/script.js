@@ -463,6 +463,36 @@ function updateSidebarProgress() {
   document.getElementById('sidebar-fill').style.width = `${pct}%`;
   document.getElementById('sidebar-pct').textContent = `${pct}%`;
   document.getElementById('sidebar-count').textContent = `${adq} de ${total}`;
+  updateGroupTabsProgress();
+}
+
+function updateGroupTabsProgress() {
+  document.querySelectorAll('.group-tab').forEach(tab => {
+    const view = tab.dataset.view;
+    const group = GROUPS[view];
+    if (!group) return; // "todas", "pendentes" etc
+    let total = 0, adq = 0;
+    group.times.forEach(cod => {
+      if (!album[cod]) return;
+      const figs = Object.values(album[cod].figurinhas);
+      total += figs.length;
+      adq += figs.filter(f => f.qtd > 0).length;
+    });
+    // Incluir candidatos de repescagem que já têm figurinhas
+    if (group.pending && group.pending.albCods) {
+      group.pending.albCods.forEach(cod => {
+        if (!album[cod]) return;
+        const figs = Object.values(album[cod].figurinhas);
+        total += figs.length;
+        adq += figs.filter(f => f.qtd > 0).length;
+      });
+    }
+    const pct = total > 0 ? Math.round((adq / total) * 100) : 0;
+    // Atualiza o texto da tab com porcentagem
+    const baseLabel = tab.dataset.label || tab.textContent.replace(/\s*\d+%$/, '');
+    if (!tab.dataset.label) tab.dataset.label = baseLabel;
+    tab.innerHTML = `${baseLabel} <span class="tab-pct">${pct}%</span>`;
+  });
 }
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
@@ -575,6 +605,28 @@ function openTradeModal() {
 function closeTradeModal() {
   document.getElementById('trade-overlay').classList.add('hidden');
 }
+
+// ─── BUSCA DE FIGURINHA ──────────────────────────────────────────────────────
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toUpperCase();
+  if (!query) {
+    // Limpa busca, volta ao normal
+    document.querySelectorAll('.sticker-card').forEach(c => c.style.display = '');
+    document.querySelectorAll('.team-section').forEach(t => t.style.display = '');
+    return;
+  }
+  // Esconde todos os cards que não batem, mostra os que batem
+  document.querySelectorAll('.sticker-card').forEach(card => {
+    const cod = card.dataset.cod.toUpperCase();
+    card.style.display = cod.includes(query) ? '' : 'none';
+  });
+  // Esconde seções de time sem resultados visíveis
+  document.querySelectorAll('.team-section').forEach(section => {
+    const visibleCards = section.querySelectorAll('.sticker-card:not([style*="display: none"])');
+    section.style.display = visibleCards.length > 0 ? '' : 'none';
+  });
+});
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 loadAlbum();

@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import {
-  View, Text, ScrollView, TouchableOpacity,
+  View, Text, ScrollView, TouchableOpacity, TextInput,
   Image, StyleSheet, ActivityIndicator, Dimensions, Modal, Share
 } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
+import * as Haptics from 'expo-haptics';
 import { getAlbum, increment, decrement } from '../api';
 import { GROUPS, flagUrl } from '../groups';
 
@@ -61,7 +62,7 @@ const StickerCard = memo(({ cod, dados, onPress, onLongPress }) => {
 });
 
 // ── Team Section (collapsível) ────────────────────────────────────────────────
-const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded }) => {
+const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded, search }) => {
   const [expanded, setExpanded] = useState(defaultExpanded ?? true);
 
   const figurinhas = Object.entries(sel.figurinhas).sort((a, b) => {
@@ -74,7 +75,9 @@ const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded }
   const pct   = Math.round((adq / total) * 100);
   const flag  = flagUrl(selKey);
 
-  const filtered = expanded ? figurinhas.filter(([, d]) => {
+  const searchUpper = (search || '').toUpperCase();
+  const filtered = expanded ? figurinhas.filter(([cod, d]) => {
+    if (searchUpper && !cod.toUpperCase().includes(searchUpper)) return false;
     if (filter === 'todas')    return true;
     if (filter === 'falta')    return d.qtd === 0;
     if (filter === 'tenho')    return d.qtd === 1;
@@ -245,6 +248,28 @@ function PendingSlot({ pending, album, filter, onInc, onDec }) {
   );
 }
 
+// ── Progresso por grupo ──────────────────────────────────────────────────────
+function getGroupPct(tabKey, album) {
+  const group = GROUPS[tabKey];
+  if (!group) return null; // "todas", "pendentes"
+  let total = 0, adq = 0;
+  group.times.forEach(cod => {
+    if (!album[cod]) return;
+    const figs = Object.values(album[cod].figurinhas);
+    total += figs.length;
+    adq += figs.filter(f => f.qtd > 0).length;
+  });
+  if (group.pending && group.pending.albCods) {
+    group.pending.albCods.forEach(cod => {
+      if (!album[cod]) return;
+      const figs = Object.values(album[cod].figurinhas);
+      total += figs.length;
+      adq += figs.filter(f => f.qtd > 0).length;
+    });
+  }
+  return total > 0 ? Math.round((adq / total) * 100) : 0;
+}
+
 // ── Main Screen ───────────────────────────────────────────────────────────────
 export default function AlbumScreen() {
   const [album, setAlbum]       = useState({});
@@ -253,6 +278,7 @@ export default function AlbumScreen() {
   const [view, setView]         = useState('A');
   const [filter, setFilter]     = useState('todas');
   const [tradeOpen, setTradeOpen] = useState(false);
+  const [search, setSearch]       = useState('');
 
   useEffect(() => { loadAlbum(); }, []);
 
@@ -270,6 +296,7 @@ export default function AlbumScreen() {
 
   // Optimistic update: atualiza a UI imediatamente, reverte se falhar
   const handleInc = useCallback((cod, selKey) => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     setAlbum(prev => {
       const qtd = prev[selKey].figurinhas[cod].qtd + 1;
       return {
@@ -296,6 +323,7 @@ export default function AlbumScreen() {
   }, []);
 
   const handleDec = useCallback((cod, selKey) => {
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
     setAlbum(prev => {
       const qtd = Math.max(0, prev[selKey].figurinhas[cod].qtd - 1);
       return {
@@ -354,7 +382,7 @@ export default function AlbumScreen() {
           </View>
         )}
         {g.times.map(cod => album[cod] && (
-          <TeamSection key={cod} selKey={cod} sel={album[cod]} onInc={handleInc} onDec={handleDec} filter={filter} defaultExpanded={defaultExpanded} />
+          <TeamSection key={cod} selKey={cod} sel={album[cod]} onInc={handleInc} onDec={handleDec} filter={filter} defaultExpanded={defaultExpanded} search={search} />
         ))}
         {g.missing?.map(m => <MissingTeam key={m.cod} nome={m.nome} cod={m.cod} />)}
         {g.pending && (
@@ -391,10 +419,33 @@ export default function AlbumScreen() {
     <View style={s.root}>
       <TradeModal visible={tradeOpen} onClose={() => setTradeOpen(false)} album={album} />
 
-      {/* Botão flutuante */}
+      {/* Botão flutuante com badge */}
       <TouchableOpacity style={s.fab} onPress={() => setTradeOpen(true)}>
         <Text style={s.fabTxt}>🔄</Text>
+        {repFig > 0 && (
+          <View style={s.fabBadge}>
+            <Text style={s.fabBadgeTxt}>{repFig}</Text>
+          </View>
+        )}
       </TouchableOpacity>
+
+      {/* Busca */}
+      <View style={s.searchWrap}>
+        <TextInput
+          style={s.searchInput}
+          placeholder="Buscar figurinha (ex: BRA5)"
+          placeholderTextColor={T.muted}
+          value={search}
+          onChangeText={setSearch}
+          autoCapitalize="characters"
+          autoCorrect={false}
+        />
+        {search.length > 0 && (
+          <TouchableOpacity style={s.searchClear} onPress={() => setSearch('')}>
+            <Text style={s.searchClearTxt}>✕</Text>
+          </TouchableOpacity>
+        )}
+      </View>
 
       {/* Progresso geral */}
       <View style={s.topProgress}>
@@ -409,11 +460,17 @@ export default function AlbumScreen() {
 
       {/* Group Tabs */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.tabsWrap} contentContainerStyle={s.tabsContent}>
-        {TABS.map(tab => (
-          <TouchableOpacity key={tab.key} style={[s.tab, view === tab.key && s.tabActive, tab.key === 'pendentes' && s.tabPending]} onPress={() => setView(tab.key)}>
-            <Text style={[s.tabTxt, view === tab.key && s.tabTxtActive, tab.key === 'pendentes' && s.tabTxtPending]}>{tab.label}</Text>
-          </TouchableOpacity>
-        ))}
+        {TABS.map(tab => {
+          const grpPct = getGroupPct(tab.key, album);
+          return (
+            <TouchableOpacity key={tab.key} style={[s.tab, view === tab.key && s.tabActive, tab.key === 'pendentes' && s.tabPending]} onPress={() => setView(tab.key)}>
+              <Text style={[s.tabTxt, view === tab.key && s.tabTxtActive, tab.key === 'pendentes' && s.tabTxtPending]}>
+                {tab.label}
+                {grpPct !== null && <Text style={[s.tabPct, view === tab.key && s.tabPctActive]}> {grpPct}%</Text>}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
       </ScrollView>
 
       {/* Filter Pills */}
@@ -443,6 +500,12 @@ const s = StyleSheet.create({
   retryBtn: { backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border2, borderRadius: 10, paddingVertical: 10, paddingHorizontal: 24 },
   retryTxt: { color: T.text, fontWeight: '700' },
 
+  // Search
+  searchWrap: { flexDirection: 'row', alignItems: 'center', backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border, paddingHorizontal: 12, paddingVertical: 8 },
+  searchInput: { flex: 1, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 10, color: T.text, paddingHorizontal: 14, paddingVertical: 8, fontSize: 14 },
+  searchClear: { marginLeft: 8, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 8, width: 30, height: 30, alignItems: 'center', justifyContent: 'center' },
+  searchClearTxt: { color: T.muted, fontSize: 12 },
+
   // Top progress
   topProgress: { backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border, paddingHorizontal: 14, paddingVertical: 10 },
   topProgressInfo: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 6 },
@@ -459,6 +522,8 @@ const s = StyleSheet.create({
   tabTxt: { color: T.muted, fontSize: 12, fontWeight: '700' },
   tabTxtActive: { color: T.gold },
   tabTxtPending: { color: 'orange' },
+  tabPct: { fontSize: 9, fontWeight: '800', color: T.greenDim },
+  tabPctActive: { color: T.gold },
 
   filterWrap: { maxHeight: 44, borderBottomWidth: 1, borderBottomColor: T.border },
   filterContent: { paddingHorizontal: 10, paddingVertical: 6, gap: 6, flexDirection: 'row' },
@@ -522,6 +587,8 @@ const s = StyleSheet.create({
   // FAB
   fab: { position: 'absolute', bottom: 24, right: 20, width: 54, height: 54, borderRadius: 27, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.green, alignItems: 'center', justifyContent: 'center', zIndex: 50, shadowColor: T.green, shadowOpacity: 0.4, shadowRadius: 10, elevation: 8 },
   fabTxt: { fontSize: 24 },
+  fabBadge: { position: 'absolute', top: -4, right: -4, backgroundColor: T.red, borderRadius: 12, minWidth: 22, height: 22, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 5 },
+  fabBadgeTxt: { color: '#fff', fontSize: 10, fontWeight: '800' },
 
   // Trade Modal
   modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.7)', justifyContent: 'flex-end' },
