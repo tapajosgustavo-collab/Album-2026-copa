@@ -25,7 +25,6 @@ const TABS = [
   { key: 'todas', label: 'Todas' },
   { key: 'fwc',   label: '🏆 FWC' },
   ...['A','B','C','D','E','F','G','H','I','J','K','L'].map(k => ({ key: k, label: `Gr. ${k}` })),
-  { key: 'pendentes', label: '⏳ Pendentes' },
 ];
 
 const FILTERS = [
@@ -128,7 +127,7 @@ const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded, 
   );
 });
 
-// ── Trade Modal ───────────────────────────────────────────────────────────────
+// ── Trade Modal ──────────────────────────────────────────────────────────────
 function TradeModal({ visible, onClose, album }) {
   const repetidas = [];
   const faltam    = [];
@@ -214,44 +213,10 @@ function TradeModal({ visible, onClose, album }) {
   );
 }
 
-// ── Missing Team ──────────────────────────────────────────────────────────────
-function MissingTeam({ nome, cod }) {
-  return (
-    <View style={[s.teamSection, s.teamMissing]}>
-      <View style={s.teamHeader}>
-        <View style={s.teamFlagPlaceholder}><Text style={s.missingQ}>?</Text></View>
-        <View style={s.teamInfo}>
-          <Text style={s.teamName}>{nome}</Text>
-          <Text style={s.missingBadge}>Figurinhas em breve</Text>
-        </View>
-        <Text style={[s.teamCode, { opacity: 0.4 }]}>{cod}</Text>
-      </View>
-    </View>
-  );
-}
-
-// ── Pending Slot ──────────────────────────────────────────────────────────────
-function PendingSlot({ pending, album, filter, onInc, onDec }) {
-  return (
-    <View style={s.pendingSlot}>
-      <View style={s.pendingHeader}>
-        <Text style={s.pendingIcon}>⏳</Text>
-        <View style={{ flex: 1 }}>
-          <Text style={s.pendingTitle}>{pending.descricao}</Text>
-          <Text style={s.pendingSub}>{pending.candidatos}</Text>
-        </View>
-      </View>
-      {pending.albCods?.map(cod => album[cod] && (
-        <TeamSection key={cod} selKey={cod} sel={album[cod]} onInc={onInc} onDec={onDec} filter={filter} defaultExpanded={false} />
-      ))}
-    </View>
-  );
-}
-
 // ── Progresso por grupo ──────────────────────────────────────────────────────
 function getGroupPct(tabKey, album) {
   const group = GROUPS[tabKey];
-  if (!group) return null; // "todas", "pendentes"
+  if (!group) return null; // "todas"
   let total = 0, adq = 0;
   group.times.forEach(cod => {
     if (!album[cod]) return;
@@ -259,14 +224,6 @@ function getGroupPct(tabKey, album) {
     total += figs.length;
     adq += figs.filter(f => f.qtd > 0).length;
   });
-  if (group.pending && group.pending.albCods) {
-    group.pending.albCods.forEach(cod => {
-      if (!album[cod]) return;
-      const figs = Object.values(album[cod].figurinhas);
-      total += figs.length;
-      adq += figs.filter(f => f.qtd > 0).length;
-    });
-  }
   return total > 0 ? Math.round((adq / total) * 100) : 0;
 }
 
@@ -353,20 +310,6 @@ export default function AlbumScreen() {
   const defaultExpanded = view !== 'todas';
 
   function renderContent() {
-    if (view === 'pendentes') {
-      return Object.entries(GROUPS)
-        .filter(([, g]) => g.pending)
-        .map(([key, g]) => (
-          <View key={key} style={s.groupBlock}>
-            <View style={s.groupHeader}>
-              <Text style={s.groupLabel}>{g.label}</Text>
-              <Text style={s.groupSublabel}>{g.sublabel}</Text>
-            </View>
-            <PendingSlot pending={g.pending} album={album} filter={filter} onInc={handleInc} onDec={handleDec} />
-          </View>
-        ));
-    }
-
     const groupsToRender = view === 'todas'
       ? Object.entries(GROUPS)
       : view === 'fwc'
@@ -384,10 +327,6 @@ export default function AlbumScreen() {
         {g.times.map(cod => album[cod] && (
           <TeamSection key={cod} selKey={cod} sel={album[cod]} onInc={handleInc} onDec={handleDec} filter={filter} defaultExpanded={defaultExpanded} search={search} />
         ))}
-        {g.missing?.map(m => <MissingTeam key={m.cod} nome={m.nome} cod={m.cod} />)}
-        {g.pending && (
-          <PendingSlot pending={g.pending} album={album} filter={filter} onInc={handleInc} onDec={handleDec} />
-        )}
       </View>
     ));
   }
@@ -410,7 +349,7 @@ export default function AlbumScreen() {
   );
 
   // Calcular progresso geral
-  const totalFig = Object.values(album).reduce((a, sel) => a + Object.keys(sel.figurinhas).length, 0);
+  const totalFig = 980; // 48 seleções + FWC × 20 (repescagem dupla não conta)
   const adqFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).filter(f => f.qtd > 0).length, 0);
   const repFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).reduce((acc, f) => acc + Math.max(0, f.qtd - 1), 0), 0);
   const pctGeral = totalFig > 0 ? ((adqFig / totalFig) * 100).toFixed(1) : '0.0';
@@ -543,7 +482,6 @@ const s = StyleSheet.create({
   groupSublabel: { color: T.muted, fontSize: 11, marginTop: 2 },
 
   teamSection: { backgroundColor: T.surface, borderWidth: 1, borderColor: T.border, borderRadius: 12, marginBottom: 10, overflow: 'hidden' },
-  teamMissing: { opacity: 0.45 },
   teamHeader: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12, borderBottomWidth: 1, borderBottomColor: T.border },
   teamFlag: { width: 44, height: 30, borderRadius: 3 },
   teamFlagPlaceholder: { width: 44, height: 30, backgroundColor: T.surface3, borderRadius: 3, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: T.border2 },
@@ -555,9 +493,6 @@ const s = StyleSheet.create({
   teamProgressLabel: { color: T.gold, fontSize: 10, fontWeight: '700' },
   expandIcon: { color: T.muted, fontSize: 10, marginRight: 4 },
   teamCode: { color: T.muted, fontSize: 11, fontWeight: '700', backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 6, paddingHorizontal: 8, paddingVertical: 2 },
-  missingQ: { color: T.muted, fontSize: 16 },
-  missingBadge: { color: T.muted, fontSize: 11 },
-
   grid: { flexDirection: 'row', flexWrap: 'wrap', padding: GRID_PAD, gap: GAP },
   emptyFilter: { color: T.muted, fontSize: 12, padding: 12 },
 
@@ -577,12 +512,6 @@ const s = StyleSheet.create({
   cardStatus: { color: T.muted, fontSize: 9, fontWeight: '600', marginTop: 1 },
   statusGreen: { color: T.green },
   statusBlue:  { color: T.blue },
-
-  pendingSlot: { backgroundColor: 'rgba(255,168,0,0.04)', borderWidth: 1, borderColor: 'rgba(255,168,0,0.25)', borderRadius: 12, padding: 14, marginBottom: 10 },
-  pendingHeader: { flexDirection: 'row', alignItems: 'flex-start', gap: 10, marginBottom: 10 },
-  pendingIcon: { fontSize: 20 },
-  pendingTitle: { color: 'orange', fontSize: 15, fontWeight: '700', marginBottom: 2 },
-  pendingSub: { color: T.muted, fontSize: 11 },
 
   // FAB
   fab: { position: 'absolute', bottom: 24, right: 20, width: 54, height: 54, borderRadius: 27, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.green, alignItems: 'center', justifyContent: 'center', zIndex: 50, shadowColor: T.green, shadowOpacity: 0.4, shadowRadius: 10, elevation: 8 },

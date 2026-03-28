@@ -4,10 +4,12 @@ const ISO = {
   FRA:'fr', ENG:'gb-eng', GER:'de', ESP:'es', ITA:'it', POR:'pt',
   NED:'nl', BEL:'be', CRO:'hr', URU:'uy', COL:'co', MAR:'ma',
   SEN:'sn', JPN:'jp', KOR:'kr', AUS:'au', ECU:'ec', SUI:'ch',
-  DEN:'dk', SRB:'rs', POL:'pl', UKR:'ua', SWE:'se', TUR:'tr',
-  EGY:'eg', NGA:'ng', GHA:'gh', TUN:'tn', ALG:'dz', CMR:'cm',
-  MLI:'ml', KSA:'sa', IRN:'ir', IRQ:'iq', UAE:'ae', UZB:'uz',
-  PAN:'pa', CRC:'cr', JAM:'jm', HON:'hn', SLV:'sv', NZL:'nz', PAR:'py'
+  DEN:'dk', POL:'pl', SWE:'se', TUR:'tr',
+  EGY:'eg', GHA:'gh', TUN:'tn', ALG:'dz',
+  KSA:'sa', IRN:'ir', IRQ:'iq', UZB:'uz',
+  PAN:'pa', JAM:'jm', NZL:'nz', PAR:'py',
+  RSA:'za', QAT:'qa', HAI:'ht', SCO:'gb-sct', CUW:'cw', CIV:'ci',
+  CPV:'cv', NOR:'no', AUT:'at', JOR:'jo'
 };
 
 function flagImg(code, size = 32) {
@@ -18,84 +20,20 @@ function flagImg(code, size = 32) {
 
 // ─── GRUPOS ──────────────────────────────────────────────────────────────────
 const GROUPS = {
-  fwc: {
-    label: 'FWC', sublabel: 'Símbolos & Estádios',
-    times: ['FWC'], missing: [], pending: null
-  },
-  A: {
-    label: 'Grupo A', sublabel: 'México · Coreia do Sul · África do Sul + Repescagem',
-    times: ['MEX', 'KOR'],
-    missing: [{ nome: 'África do Sul', cod: 'RSA' }],
-    pending: { descricao: 'Repescagem Europa D', candidatos: 'Dinamarca, Macedônia do Norte, Rep. Tcheca ou Irlanda', albCods: ['DEN'] }
-  },
-  B: {
-    label: 'Grupo B', sublabel: 'Canadá · Suíça · Catar + Repescagem',
-    times: ['CAN', 'SUI'],
-    missing: [{ nome: 'Catar', cod: 'QAT' }],
-    pending: { descricao: 'Repescagem Europa A', candidatos: 'Itália, Irlanda do Norte, País de Gales ou Bósnia', albCods: ['ITA'] }
-  },
-  C: {
-    label: 'Grupo C', sublabel: 'Brasil · Marrocos · Haiti · Escócia',
-    times: ['BRA', 'MAR'],
-    missing: [{ nome: 'Haiti', cod: 'HAI' }, { nome: 'Escócia', cod: 'SCO' }],
-    pending: null
-  },
-  D: {
-    label: 'Grupo D', sublabel: 'Estados Unidos · Paraguai · Austrália + Repescagem',
-    times: ['USA', 'PAR', 'AUS'],
-    missing: [],
-    pending: { descricao: 'Repescagem Europa C', candidatos: 'Turquia, Romênia, Eslováquia ou Kosovo', albCods: ['TUR'] }
-  },
-  E: {
-    label: 'Grupo E', sublabel: 'Alemanha · Equador · Curaçao · Costa do Marfim',
-    times: ['GER', 'ECU'],
-    missing: [{ nome: 'Curaçao', cod: 'CUW' }, { nome: 'Costa do Marfim', cod: 'CIV' }],
-    pending: null
-  },
-  F: {
-    label: 'Grupo F', sublabel: 'Holanda · Japão · Tunísia + Repescagem',
-    times: ['NED', 'JPN', 'TUN'],
-    missing: [],
-    pending: { descricao: 'Repescagem Europa B', candidatos: 'Ucrânia, Suécia, Polônia ou Albânia', albCods: ['UKR', 'SWE', 'POL'] }
-  },
-  G: {
-    label: 'Grupo G', sublabel: 'Bélgica · Egito · Irã · Nova Zelândia',
-    times: ['BEL', 'EGY', 'IRN', 'NZL'],
-    missing: [], pending: null
-  },
-  H: {
-    label: 'Grupo H', sublabel: 'Espanha · Arábia Saudita · Uruguai · Cabo Verde',
-    times: ['ESP', 'KSA', 'URU'],
-    missing: [{ nome: 'Cabo Verde', cod: 'CPV' }],
-    pending: null
-  },
-  I: {
-    label: 'Grupo I', sublabel: 'França · Senegal · Noruega + Repescagem',
-    times: ['FRA', 'SEN'],
-    missing: [{ nome: 'Noruega', cod: 'NOR' }],
-    pending: { descricao: 'Repescagem Intercontinental 2', candidatos: 'Bolívia, Suriname ou Iraque', albCods: ['IRQ'] }
-  },
-  J: {
-    label: 'Grupo J', sublabel: 'Argentina · Argélia · Áustria · Jordânia',
-    times: ['ARG', 'ALG'],
-    missing: [{ nome: 'Áustria', cod: 'AUT' }, { nome: 'Jordânia', cod: 'JOR' }],
-    pending: null
-  },
-  K: {
-    label: 'Grupo K', sublabel: 'Portugal · Uzbequistão · Colômbia + Repescagem',
-    times: ['POR', 'UZB', 'COL'],
-    missing: [],
-    pending: { descricao: 'Repescagem Intercontinental 1', candidatos: 'RD Congo, Jamaica ou Nova Caledônia', albCods: ['JAM'] }
-  },
-  L: {
-    label: 'Grupo L', sublabel: 'Inglaterra · Croácia · Gana · Panamá',
-    times: ['ENG', 'CRO', 'GHA', 'PAN'],
-    missing: [], pending: null
-  },
+  fwc: { label: 'FWC', sublabel: 'Símbolos & Estádios', times: ['FWC'] },
+  A: { label: 'Grupo A', sublabel: 'México · Coreia do Sul · África do Sul · Dinamarca', times: ['MEX', 'KOR', 'RSA', 'DEN'] },
+  B: { label: 'Grupo B', sublabel: 'Canadá · Suíça · Catar · Itália', times: ['CAN', 'SUI', 'QAT', 'ITA'] },
+  C: { label: 'Grupo C', sublabel: 'Brasil · Marrocos · Haiti · Escócia', times: ['BRA', 'MAR', 'HAI', 'SCO'] },
+  D: { label: 'Grupo D', sublabel: 'Estados Unidos · Paraguai · Austrália · Turquia', times: ['USA', 'PAR', 'AUS', 'TUR'] },
+  E: { label: 'Grupo E', sublabel: 'Alemanha · Equador · Curaçao · Costa do Marfim', times: ['GER', 'ECU', 'CUW', 'CIV'] },
+  F: { label: 'Grupo F', sublabel: 'Holanda · Japão · Tunísia · Suécia · Polônia', times: ['NED', 'JPN', 'TUN', 'SWE', 'POL'] },
+  G: { label: 'Grupo G', sublabel: 'Bélgica · Egito · Irã · Nova Zelândia', times: ['BEL', 'EGY', 'IRN', 'NZL'] },
+  H: { label: 'Grupo H', sublabel: 'Espanha · Cabo Verde · Arábia Saudita · Uruguai', times: ['ESP', 'CPV', 'KSA', 'URU'] },
+  I: { label: 'Grupo I', sublabel: 'França · Senegal · Noruega · Iraque', times: ['FRA', 'SEN', 'NOR', 'IRQ'] },
+  J: { label: 'Grupo J', sublabel: 'Argentina · Argélia · Áustria · Jordânia', times: ['ARG', 'ALG', 'AUT', 'JOR'] },
+  K: { label: 'Grupo K', sublabel: 'Portugal · Uzbequistão · Colômbia · Jamaica', times: ['POR', 'UZB', 'COL', 'JAM'] },
+  L: { label: 'Grupo L', sublabel: 'Inglaterra · Croácia · Gana · Panamá', times: ['ENG', 'CRO', 'GHA', 'PAN'] },
 };
-
-// Times sem grupo definido (candidatos sem grupo ainda no álbum)
-const TIMES_SEM_GRUPO = ['SRB', 'NGA', 'CMR', 'MLI', 'UAE', 'CRC', 'HON', 'SLV'];
 
 // ─── ESTADO ──────────────────────────────────────────────────────────────────
 let album = {};
@@ -120,9 +58,6 @@ document.querySelectorAll('.group-tab').forEach(btn => {
     document.querySelectorAll('.group-tab').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentView = btn.dataset.view;
-    activeFilter = 'todas';
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    document.querySelector('[data-filter="todas"]').classList.add('active');
     renderView(currentView);
   });
 });
@@ -184,25 +119,12 @@ function renderView(view) {
   const container = document.getElementById('album-sections');
   container.innerHTML = '';
 
-  if (view === 'pendentes') {
-    renderPendentes(container);
-    return;
-  }
-
   if (view === 'todas') {
     // FWC primeiro, depois todos os grupos
     renderGroupBlock(container, GROUPS.fwc);
     Object.entries(GROUPS).forEach(([key, g]) => {
       if (key !== 'fwc') renderGroupBlock(container, g);
     });
-    // Times sem grupo
-    if (TIMES_SEM_GRUPO.some(t => album[t])) {
-      const block = document.createElement('div');
-      block.className = 'group-block';
-      block.innerHTML = `<div class="group-block-header"><span class="group-block-label">Outros</span><span class="group-block-sublabel">Times sem grupo definido</span></div>`;
-      TIMES_SEM_GRUPO.forEach(cod => { if (album[cod]) block.appendChild(createTeamSection(cod)); });
-      container.appendChild(block);
-    }
     applyFilter();
     return;
   }
@@ -235,20 +157,10 @@ function renderGroupBlock(container, group) {
     `;
   }
 
-  // Times confirmados com figurinhas no álbum
+  // Times com figurinhas no álbum
   group.times.forEach(cod => {
     if (album[cod]) block.appendChild(createTeamSection(cod));
   });
-
-  // Times confirmados mas sem dados no álbum ainda
-  if (group.missing && group.missing.length > 0) {
-    group.missing.forEach(m => block.appendChild(createMissingTeam(m)));
-  }
-
-  // Vaga de repescagem
-  if (group.pending) {
-    block.appendChild(createPendingSlot(group.pending));
-  }
 
   container.appendChild(block);
 }
@@ -311,86 +223,6 @@ function createStickerCard(cod, dados, selKey) {
   card.addEventListener('click', () => handleIncrement(card));
   card.addEventListener('contextmenu', e => { e.preventDefault(); handleDecrement(card); });
   return card;
-}
-
-// ─── TIME FALTANDO NO ÁLBUM ──────────────────────────────────────────────────
-function createMissingTeam(m) {
-  const div = document.createElement('div');
-  div.className = 'team-section team-missing';
-  div.innerHTML = `
-    <div class="team-section-header">
-      <div class="team-section-flag missing-flag">?</div>
-      <div class="team-section-info">
-        <span class="team-section-name">${m.nome}</span>
-        <span class="missing-badge">Figurinhas em breve</span>
-      </div>
-      <span class="team-section-code muted">${m.cod}</span>
-    </div>
-  `;
-  return div;
-}
-
-// ─── VAGA PENDENTE (REPESCAGEM) ──────────────────────────────────────────────
-function createPendingSlot(pending) {
-  const div = document.createElement('div');
-  div.className = 'pending-slot';
-  div.innerHTML = `
-    <div class="pending-slot-header">
-      <span class="pending-slot-icon">⏳</span>
-      <div>
-        <span class="pending-slot-title">${pending.descricao}</span>
-        <span class="pending-slot-sub">${pending.candidatos}</span>
-      </div>
-    </div>
-  `;
-
-  if (pending.albCods && pending.albCods.length > 0) {
-    const label = document.createElement('p');
-    label.className = 'pending-candidates-label';
-    label.textContent = 'Candidatos com figurinhas no álbum:';
-    div.appendChild(label);
-
-    const grid = document.createElement('div');
-    grid.className = 'pending-candidates-grid';
-    pending.albCods.forEach(cod => {
-      if (album[cod]) grid.appendChild(createTeamSection(cod));
-    });
-    div.appendChild(grid);
-  }
-
-  return div;
-}
-
-// ─── VIEW PENDENTES (REPESCAGENS) ────────────────────────────────────────────
-function renderPendentes(container) {
-  const header = document.createElement('div');
-  header.className = 'group-block-header';
-  header.innerHTML = `
-    <span class="group-block-label">⏳ Vagas Pendentes</span>
-    <span class="group-block-sublabel">Seleções aguardando resultado das repescagens</span>
-  `;
-  container.appendChild(header);
-
-  Object.values(GROUPS).forEach(g => {
-    if (!g.pending) return;
-    const block = document.createElement('div');
-    block.className = 'group-block';
-    block.innerHTML = `<div class="group-block-header"><span class="group-block-label">${g.label}</span><span class="group-block-sublabel">${g.sublabel}</span></div>`;
-    block.appendChild(createPendingSlot(g.pending));
-    container.appendChild(block);
-  });
-
-  // Times no álbum sem grupo (outros candidatos)
-  const semGrupo = TIMES_SEM_GRUPO.filter(t => album[t]);
-  if (semGrupo.length > 0) {
-    const block = document.createElement('div');
-    block.className = 'group-block';
-    block.innerHTML = `<div class="group-block-header"><span class="group-block-label">Outros Candidatos</span><span class="group-block-sublabel">Times no álbum sem grupo definido</span></div>`;
-    semGrupo.forEach(cod => block.appendChild(createTeamSection(cod)));
-    container.appendChild(block);
-  }
-
-  applyFilter();
 }
 
 // ─── INCREMENTAR / DECREMENTAR ───────────────────────────────────────────────
@@ -456,13 +288,13 @@ function updateTeamProgress(selKey) {
 }
 
 function updateSidebarProgress() {
-  const total = 980;
+  const total = 980; // 48 seleções + FWC × 20 (repescagem dupla não conta)
   const adq = Object.values(album).reduce((acc, s) =>
     acc + Object.values(s.figurinhas).filter(f => f.qtd > 0).length, 0);
   const pct = ((adq / total) * 100).toFixed(1);
   document.getElementById('sidebar-fill').style.width = `${pct}%`;
   document.getElementById('sidebar-pct').textContent = `${pct}%`;
-  document.getElementById('sidebar-count').textContent = `${adq} de ${total}`;
+  document.getElementById('sidebar-count').textContent = `${adq} de ${total} figurinhas`;
   updateGroupTabsProgress();
 }
 
@@ -470,7 +302,7 @@ function updateGroupTabsProgress() {
   document.querySelectorAll('.group-tab').forEach(tab => {
     const view = tab.dataset.view;
     const group = GROUPS[view];
-    if (!group) return; // "todas", "pendentes" etc
+    if (!group) return; // "todas"
     let total = 0, adq = 0;
     group.times.forEach(cod => {
       if (!album[cod]) return;
@@ -478,15 +310,6 @@ function updateGroupTabsProgress() {
       total += figs.length;
       adq += figs.filter(f => f.qtd > 0).length;
     });
-    // Incluir candidatos de repescagem que já têm figurinhas
-    if (group.pending && group.pending.albCods) {
-      group.pending.albCods.forEach(cod => {
-        if (!album[cod]) return;
-        const figs = Object.values(album[cod].figurinhas);
-        total += figs.length;
-        adq += figs.filter(f => f.qtd > 0).length;
-      });
-    }
     const pct = total > 0 ? Math.round((adq / total) * 100) : 0;
     // Atualiza o texto da tab com porcentagem
     const baseLabel = tab.dataset.label || tab.textContent.replace(/\s*\d+%$/, '');
@@ -540,7 +363,7 @@ async function loadStats() {
     const pct = Math.round((adq / total) * 100);
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td><span class="team-badge">${key}</span>${flagImg(key, 24)} ${sel.nome}</td>
+      <td>${flagImg(key, 40)} ${key}</td>
       <td>${adq}</td><td>${falt}</td><td>${rep}</td>
       <td>
         <div class="mini-bar-wrap">
@@ -614,6 +437,8 @@ searchInput.addEventListener('input', () => {
     // Limpa busca, volta ao normal
     document.querySelectorAll('.sticker-card').forEach(c => c.style.display = '');
     document.querySelectorAll('.team-section').forEach(t => t.style.display = '');
+    document.querySelectorAll('.group-block').forEach(b => b.style.display = '');
+    document.querySelectorAll('.group-block-header').forEach(h => h.style.display = '');
     return;
   }
   // Esconde todos os cards que não batem, mostra os que batem
@@ -625,6 +450,11 @@ searchInput.addEventListener('input', () => {
   document.querySelectorAll('.team-section').forEach(section => {
     const visibleCards = section.querySelectorAll('.sticker-card:not([style*="display: none"])');
     section.style.display = visibleCards.length > 0 ? '' : 'none';
+  });
+  // Esconde blocos de grupo que ficaram sem conteúdo visível
+  document.querySelectorAll('.group-block').forEach(block => {
+    const visibleSections = block.querySelectorAll('.team-section:not([style*="display: none"])');
+    block.style.display = visibleSections.length > 0 ? '' : 'none';
   });
 });
 
