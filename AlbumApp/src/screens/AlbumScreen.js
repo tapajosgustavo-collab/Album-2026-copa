@@ -381,6 +381,12 @@ export default function AlbumScreen() {
     </View>
   );
 
+  // Calcular progresso geral
+  const totalFig = Object.values(album).reduce((a, sel) => a + Object.keys(sel.figurinhas).length, 0);
+  const adqFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).filter(f => f.qtd > 0).length, 0);
+  const repFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).reduce((acc, f) => acc + Math.max(0, f.qtd - 1), 0), 0);
+  const pctGeral = totalFig > 0 ? ((adqFig / totalFig) * 100).toFixed(1) : '0.0';
+
   return (
     <View style={s.root}>
       <TradeModal visible={tradeOpen} onClose={() => setTradeOpen(false)} album={album} />
@@ -389,6 +395,17 @@ export default function AlbumScreen() {
       <TouchableOpacity style={s.fab} onPress={() => setTradeOpen(true)}>
         <Text style={s.fabTxt}>🔄</Text>
       </TouchableOpacity>
+
+      {/* Progresso geral */}
+      <View style={s.topProgress}>
+        <View style={s.topProgressInfo}>
+          <Text style={s.topPct}>{pctGeral}%</Text>
+          <Text style={s.topCount}>{adqFig}/{totalFig} figurinhas  ·  🔄 {repFig} repetidas</Text>
+        </View>
+        <View style={s.topTrack}>
+          <View style={[s.topFill, { width: `${pctGeral}%` }]} />
+        </View>
+      </View>
 
       {/* Group Tabs */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.tabsWrap} contentContainerStyle={s.tabsContent}>
@@ -425,6 +442,14 @@ const s = StyleSheet.create({
   errorTxt: { color: T.muted, textAlign: 'center', lineHeight: 22, marginBottom: 20 },
   retryBtn: { backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border2, borderRadius: 10, paddingVertical: 10, paddingHorizontal: 24 },
   retryTxt: { color: T.text, fontWeight: '700' },
+
+  // Top progress
+  topProgress: { backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border, paddingHorizontal: 14, paddingVertical: 10 },
+  topProgressInfo: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 6 },
+  topPct: { color: T.gold, fontSize: 18, fontWeight: '800' },
+  topCount: { color: T.muted, fontSize: 11, fontWeight: '600' },
+  topTrack: { height: 6, backgroundColor: T.surface3, borderRadius: 99, overflow: 'hidden' },
+  topFill: { height: '100%', backgroundColor: T.greenDim, borderRadius: 99 },
 
   tabsWrap: { backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border, maxHeight: 50 },
   tabsContent: { paddingHorizontal: 10, paddingVertical: 8, gap: 6, flexDirection: 'row' },
