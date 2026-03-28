@@ -277,7 +277,12 @@ function createTeamSection(selKey) {
   `;
 
   const grid = section.querySelector(`#grid-${selKey}`);
-  for (const [cod, dados] of Object.entries(sel.figurinhas)) {
+  const sorted = Object.entries(sel.figurinhas).sort((a, b) => {
+    const numA = parseInt(a[0].replace(/\D/g, ''));
+    const numB = parseInt(b[0].replace(/\D/g, ''));
+    return numA - numB;
+  });
+  for (const [cod, dados] of sorted) {
     grid.appendChild(createStickerCard(cod, dados, selKey));
   }
 

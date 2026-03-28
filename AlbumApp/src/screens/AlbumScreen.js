@@ -64,7 +64,11 @@ const StickerCard = memo(({ cod, dados, onPress, onLongPress }) => {
 const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded }) => {
   const [expanded, setExpanded] = useState(defaultExpanded ?? true);
 
-  const figurinhas = Object.entries(sel.figurinhas);
+  const figurinhas = Object.entries(sel.figurinhas).sort((a, b) => {
+    const numA = parseInt(a[0].replace(/\D/g, ''));
+    const numB = parseInt(b[0].replace(/\D/g, ''));
+    return numA - numB;
+  });
   const total = figurinhas.length;
   const adq   = figurinhas.filter(([, d]) => d.qtd > 0).length;
   const pct   = Math.round((adq / total) * 100);
