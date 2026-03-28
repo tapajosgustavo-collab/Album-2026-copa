@@ -241,6 +241,7 @@ export default function AlbumScreen() {
 
   async function loadAlbum() {
     try {
+      setLoading(true);
       setError(null);
       const data = await getAlbum();
       setAlbum(data);
@@ -402,8 +403,8 @@ export default function AlbumScreen() {
         {TABS.map(tab => {
           const grpPct = getGroupPct(tab.key, album);
           return (
-            <TouchableOpacity key={tab.key} style={[s.tab, view === tab.key && s.tabActive, tab.key === 'pendentes' && s.tabPending]} onPress={() => setView(tab.key)}>
-              <Text style={[s.tabTxt, view === tab.key && s.tabTxtActive, tab.key === 'pendentes' && s.tabTxtPending]}>
+            <TouchableOpacity key={tab.key} style={[s.tab, view === tab.key && s.tabActive]} onPress={() => setView(tab.key)}>
+              <Text style={[s.tabTxt, view === tab.key && s.tabTxtActive]}>
                 {tab.label}
                 {grpPct !== null && <Text style={[s.tabPct, view === tab.key && s.tabPctActive]}> {grpPct}%</Text>}
               </Text>
@@ -457,10 +458,8 @@ const s = StyleSheet.create({
   tabsContent: { paddingHorizontal: 10, paddingVertical: 8, gap: 6, flexDirection: 'row' },
   tab: { backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 6 },
   tabActive: { backgroundColor: 'rgba(245,200,66,0.12)', borderColor: T.gold },
-  tabPending: { borderStyle: 'dashed' },
   tabTxt: { color: T.muted, fontSize: 12, fontWeight: '700' },
   tabTxtActive: { color: T.gold },
-  tabTxtPending: { color: 'orange' },
   tabPct: { fontSize: 9, fontWeight: '800', color: T.greenDim },
   tabPctActive: { color: T.gold },
 

@@ -431,8 +431,16 @@ function closeTradeModal() {
 
 // ─── BUSCA DE FIGURINHA ──────────────────────────────────────────────────────
 const searchInput = document.getElementById('search-input');
+const searchClear = document.getElementById('search-clear');
+
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  searchInput.dispatchEvent(new Event('input'));
+});
+
 searchInput.addEventListener('input', () => {
   const query = searchInput.value.trim().toUpperCase();
+  searchClear.classList.toggle('hidden', !query);
   if (!query) {
     // Limpa busca, volta ao normal
     document.querySelectorAll('.sticker-card').forEach(c => c.style.display = '');

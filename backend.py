@@ -2,7 +2,7 @@ import json
 import os
 
 def gerar_album_copa_2026():
-    # As 48 seleções confirmadas/estimadas para os grupos de 2026
+    # 50 seleções: 48 confirmadas + 2 candidatos repescagem Grupo F (SWE/POL)
     prefixos_2026 = [
         "FWC", "USA", "MEX", "CAN", "BRA", "ARG", "FRA", "ENG", "GER", "ESP",
         "ITA", "POR", "NED", "BEL", "CRO", "URU", "COL", "MAR", "SEN", "JPN",
