@@ -1,8 +1,8 @@
 const getApiUrl = () => {
   if (__DEV__) {
-    return 'http://172.21.223.21:5000';
+    return 'http://192.168.0.216:5000';
   }
-  return 'http://172.21.223.21:5000';
+  return 'http://192.168.0.216:5000';
 };
 
 export const API_URL = getApiUrl();
