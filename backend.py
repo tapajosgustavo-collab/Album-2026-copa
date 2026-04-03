@@ -2,32 +2,35 @@ import json
 import os
 
 def gerar_album_copa_2026():
-    # 50 seleções: 48 confirmadas + 2 candidatos repescagem Grupo F (SWE/POL)
+    # 48 seleções confirmadas + FWC = 49 seções × 20 = 980 figurinhas
     prefixos_2026 = [
-        "FWC", "USA", "MEX", "CAN", "BRA", "ARG", "FRA", "ENG", "GER", "ESP",
-        "ITA", "POR", "NED", "BEL", "CRO", "URU", "COL", "MAR", "SEN", "JPN",
-        "KOR", "AUS", "ECU", "SUI", "DEN", "POL", "SWE", "TUR",
-        "EGY", "GHA", "TUN", "ALG", "KSA", "IRN", "IRQ",
-        "UZB", "PAN", "JAM", "NZL", "PAR",
-        "RSA", "QAT", "HAI", "SCO", "CUW", "CIV", "CPV", "NOR", "AUT", "JOR"
+        "FWC", "MEX", "RSA", "KOR", "CZE",
+        "CAN", "BIH", "QAT", "SUI",
+        "BRA", "MAR", "HAI", "SCO",
+        "USA", "PAR", "AUS", "TUR",
+        "ESP", "JPN", "PER", "SWE",
+        "GER", "CMR", "NZL",
+        "URU", "KSA", "SVK", "BEN",
+        "NED", "ECU", "HUN", "IRL",
+        "FRA", "SEN", "NOR", "IRQ",
+        "ARG", "ALG", "AUT", "JOR",
+        "POR", "COD", "UZB", "COL",
+        "ENG", "CRO", "GHA", "PAN"
     ]
 
     nomes = {
-        "USA": "Estados Unidos", "MEX": "México", "CAN": "Canadá", "BRA": "Brasil",
-        "ARG": "Argentina", "FRA": "França", "ENG": "Inglaterra", "GER": "Alemanha",
-        "ESP": "Espanha", "ITA": "Itália", "POR": "Portugal", "NED": "Holanda",
-        "BEL": "Bélgica", "CRO": "Croácia", "URU": "Uruguai", "COL": "Colômbia",
-        "MAR": "Marrocos", "SEN": "Senegal", "JPN": "Japão", "KOR": "Coreia do Sul",
-        "AUS": "Austrália", "ECU": "Equador", "SUI": "Suíça", "DEN": "Dinamarca",
-        "POL": "Polônia", "SWE": "Suécia",
-        "TUR": "Turquia", "EGY": "Egito", "GHA": "Gana",
-        "TUN": "Tunísia", "ALG": "Argélia",
-        "KSA": "Arábia Saudita", "IRN": "Irã", "IRQ": "Iraque",
-        "UZB": "Uzbequistão", "PAN": "Panamá", "JAM": "Jamaica",
-        "NZL": "Nova Zelândia", "PAR": "Paraguai",
-        "RSA": "África do Sul", "QAT": "Catar", "HAI": "Haiti", "SCO": "Escócia",
-        "CUW": "Curaçao", "CIV": "Costa do Marfim", "CPV": "Cabo Verde",
-        "NOR": "Noruega", "AUT": "Áustria", "JOR": "Jordânia",
+        "MEX": "México", "RSA": "África do Sul", "KOR": "Coreia do Sul", "CZE": "República Tcheca",
+        "CAN": "Canadá", "BIH": "Bósnia e Herzegovina", "QAT": "Catar", "SUI": "Suíça",
+        "BRA": "Brasil", "MAR": "Marrocos", "HAI": "Haiti", "SCO": "Escócia",
+        "USA": "Estados Unidos", "PAR": "Paraguai", "AUS": "Austrália", "TUR": "Turquia",
+        "ESP": "Espanha", "JPN": "Japão", "PER": "Peru", "SWE": "Suécia",
+        "GER": "Alemanha", "CMR": "Camarões", "NZL": "Nova Zelândia",
+        "URU": "Uruguai", "KSA": "Arábia Saudita", "SVK": "Eslováquia", "BEN": "Benin",
+        "NED": "Holanda", "ECU": "Equador", "HUN": "Hungria", "IRL": "Irlanda",
+        "FRA": "França", "SEN": "Senegal", "NOR": "Noruega", "IRQ": "Iraque",
+        "ARG": "Argentina", "ALG": "Argélia", "AUT": "Áustria", "JOR": "Jordânia",
+        "POR": "Portugal", "COD": "RD Congo", "UZB": "Uzbequistão", "COL": "Colômbia",
+        "ENG": "Inglaterra", "CRO": "Croácia", "GHA": "Gana", "PAN": "Panamá",
     }
 
     album = {}
