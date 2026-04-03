@@ -350,7 +350,7 @@ export default function AlbumScreen() {
   );
 
   // Calcular progresso geral
-  const totalFig = 960; // 47 seleções + FWC × 20 (MEX aparece em 2 grupos mas conta 1 vez)
+  const totalFig = 980; // 48 seleções + FWC × 20
   const adqFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).filter(f => f.qtd > 0).length, 0);
   const repFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).reduce((acc, f) => acc + Math.max(0, f.qtd - 1), 0), 0);
   const pctGeral = totalFig > 0 ? ((adqFig / totalFig) * 100).toFixed(1) : '0.0';

@@ -1,14 +1,15 @@
 // ─── MAPA DE FLAGS ───────────────────────────────────────────────────────────
 const ISO = {
-  FWC:'un', MEX:'mx', RSA:'za', KOR:'kr', CZE:'cz',
+  FWC:'un',
+  MEX:'mx', RSA:'za', KOR:'kr', CZE:'cz',
   CAN:'ca', BIH:'ba', QAT:'qa', SUI:'ch',
   BRA:'br', MAR:'ma', HAI:'ht', SCO:'gb-sct',
   USA:'us', PAR:'py', AUS:'au', TUR:'tr',
-  ESP:'es', JPN:'jp', PER:'pe', SWE:'se',
-  GER:'de', CMR:'cm', NZL:'nz',
-  URU:'uy', KSA:'sa', SVK:'sk', BEN:'bj',
-  NED:'nl', ECU:'ec', HUN:'hu', IRL:'ie',
-  FRA:'fr', SEN:'sn', NOR:'no', IRQ:'iq',
+  GER:'de', CUW:'cw', CIV:'ci', ECU:'ec',
+  NED:'nl', JPN:'jp', SWE:'se', TUN:'tn',
+  BEL:'be', EGY:'eg', IRN:'ir', NZL:'nz',
+  ESP:'es', CPV:'cv', KSA:'sa', URU:'uy',
+  FRA:'fr', SEN:'sn', IRQ:'iq', NOR:'no',
   ARG:'ar', ALG:'dz', AUT:'at', JOR:'jo',
   POR:'pt', COD:'cd', UZB:'uz', COL:'co',
   ENG:'gb-eng', CRO:'hr', GHA:'gh', PAN:'pa'
@@ -27,11 +28,11 @@ const GROUPS = {
   B: { label: 'Grupo B', sublabel: 'Canadá · Bósnia · Catar · Suíça', times: ['CAN', 'BIH', 'QAT', 'SUI'] },
   C: { label: 'Grupo C', sublabel: 'Brasil · Marrocos · Haiti · Escócia', times: ['BRA', 'MAR', 'HAI', 'SCO'] },
   D: { label: 'Grupo D', sublabel: 'Estados Unidos · Paraguai · Austrália · Turquia', times: ['USA', 'PAR', 'AUS', 'TUR'] },
-  E: { label: 'Grupo E', sublabel: 'Espanha · Japão · Peru · Suécia', times: ['ESP', 'JPN', 'PER', 'SWE'] },
-  F: { label: 'Grupo F', sublabel: 'Alemanha · México · Camarões · Nova Zelândia', times: ['GER', 'MEX', 'CMR', 'NZL'] },
-  G: { label: 'Grupo G', sublabel: 'Uruguai · Arábia Saudita · Eslováquia · Benin', times: ['URU', 'KSA', 'SVK', 'BEN'] },
-  H: { label: 'Grupo H', sublabel: 'Holanda · Equador · Hungria · Irlanda', times: ['NED', 'ECU', 'HUN', 'IRL'] },
-  I: { label: 'Grupo I', sublabel: 'França · Senegal · Noruega · Iraque', times: ['FRA', 'SEN', 'NOR', 'IRQ'] },
+  E: { label: 'Grupo E', sublabel: 'Alemanha · Curaçao · Costa do Marfim · Equador', times: ['GER', 'CUW', 'CIV', 'ECU'] },
+  F: { label: 'Grupo F', sublabel: 'Holanda · Japão · Suécia · Tunísia', times: ['NED', 'JPN', 'SWE', 'TUN'] },
+  G: { label: 'Grupo G', sublabel: 'Bélgica · Egito · Irã · Nova Zelândia', times: ['BEL', 'EGY', 'IRN', 'NZL'] },
+  H: { label: 'Grupo H', sublabel: 'Espanha · Cabo Verde · Arábia Saudita · Uruguai', times: ['ESP', 'CPV', 'KSA', 'URU'] },
+  I: { label: 'Grupo I', sublabel: 'França · Senegal · Iraque · Noruega', times: ['FRA', 'SEN', 'IRQ', 'NOR'] },
   J: { label: 'Grupo J', sublabel: 'Argentina · Argélia · Áustria · Jordânia', times: ['ARG', 'ALG', 'AUT', 'JOR'] },
   K: { label: 'Grupo K', sublabel: 'Portugal · RD Congo · Uzbequistão · Colômbia', times: ['POR', 'COD', 'UZB', 'COL'] },
   L: { label: 'Grupo L', sublabel: 'Inglaterra · Croácia · Gana · Panamá', times: ['ENG', 'CRO', 'GHA', 'PAN'] },
@@ -290,7 +291,7 @@ function updateTeamProgress(selKey) {
 }
 
 function updateSidebarProgress() {
-  const total = 960; // 47 seleções + FWC × 20 (MEX aparece em 2 grupos mas conta 1 vez)
+  const total = 980; // 48 seleções + FWC × 20
   const adq = Object.values(album).reduce((acc, s) =>
     acc + Object.values(s.figurinhas).filter(f => f.qtd > 0).length, 0);
   const pct = ((adq / total) * 100).toFixed(1);

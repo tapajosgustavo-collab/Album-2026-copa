@@ -46,7 +46,7 @@ def decrement(cod):
 
 @app.route('/api/estatisticas')
 def estatisticas():
-    total = 960
+    total = 980
     adquiridas = sum(1 for s in album.values() for f in s['figurinhas'].values() if f['qtd'] > 0)
     repetidas = sum(f['qtd'] - 1 for s in album.values() for f in s['figurinhas'].values() if f['qtd'] > 1)
     faltam = total - adquiridas
