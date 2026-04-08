@@ -1,3 +1,25 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+
+# Dados locais do álbum (progresso pessoal do usuário)
+album_salvo.json
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Claude Code
+CLAUDE.md
+.claude/
+
+# Logs
+*.log
