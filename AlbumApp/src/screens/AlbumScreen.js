@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback, memo } from 'react';
+import { useState, useEffect, useCallback, memo, useRef } from 'react';
 import {
-  View, Text, ScrollView, TouchableOpacity, TextInput,
-  Image, StyleSheet, ActivityIndicator, Dimensions, Modal, Share
+  View, Text, ScrollView, TouchableOpacity, TextInput, Pressable,
+  Image, StyleSheet, ActivityIndicator, Dimensions, Modal, Share, Animated
 } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import * as Haptics from 'expo-haptics';
@@ -21,21 +21,25 @@ const T = {
   blue: '#4d90ff', red: '#e8112d',
 };
 
-const TABS = [
-  { key: 'todas', label: 'Todas' },
-  { key: 'fwc',   label: '🏆 FWC' },
-  ...['A','B','C','D','E','F','G','H','I','J','K','L'].map(k => ({ key: k, label: `Gr. ${k}` })),
+const GROUP_OPTIONS = [
+  { key: 'todas', label: 'Todas as seleções', short: 'Todas' },
+  { key: 'fwc',   label: '🏆 FWC — Especiais', short: 'FWC' },
+  ...['A','B','C','D','E','F','G','H','I','J','K','L'].map(k => ({
+    key: k,
+    label: `Grupo ${k}`,
+    short: `Grupo ${k}`,
+  })),
 ];
 
-const FILTERS = [
-  { key: 'todas',    label: 'Todas' },
-  { key: 'falta',    label: 'Faltam' },
-  { key: 'tenho',    label: 'Tenho' },
-  { key: 'repetida', label: 'Repetidas' },
-  { key: 'shiny',    label: '✨ Shiny' },
+const FILTER_OPTIONS = [
+  { key: 'todas',    label: 'Todas',      icon: '📋' },
+  { key: 'falta',    label: 'Faltam',     icon: '❌' },
+  { key: 'tenho',    label: 'Tenho',      icon: '✅' },
+  { key: 'repetida', label: 'Repetidas',  icon: '🔄' },
+  { key: 'shiny',    label: 'Shiny',      icon: '✨' },
 ];
 
-// ── Sticker Card (memo = só re-renderiza se os dados mudarem) ─────────────────
+// ── Sticker Card ─────────────────────────────────────────────────────────────
 const StickerCard = memo(({ cod, dados, onPress, onLongPress }) => {
   const { is_shiny: isShiny, qtd } = dados;
 
@@ -60,7 +64,30 @@ const StickerCard = memo(({ cod, dados, onPress, onLongPress }) => {
   );
 });
 
-// ── Team Section (collapsível) ────────────────────────────────────────────────
+// ── Flag with fallback ───────────────────────────────────────────────────────
+const TeamFlag = memo(({ code }) => {
+  const [failed, setFailed] = useState(false);
+  const flag = flagUrl(code);
+
+  if (!flag || failed) {
+    return (
+      <View style={s.teamFlagPlaceholder}>
+        <Text style={s.teamFlagCode}>{code}</Text>
+      </View>
+    );
+  }
+
+  return (
+    <Image
+      source={{ uri: flag }}
+      style={s.teamFlag}
+      resizeMode="contain"
+      onError={() => setFailed(true)}
+    />
+  );
+});
+
+// ── Team Section ─────────────────────────────────────────────────────────────
 const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded, search }) => {
   const [expanded, setExpanded] = useState(defaultExpanded ?? true);
 
@@ -72,7 +99,6 @@ const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded, 
   const total = figurinhas.length;
   const adq   = figurinhas.filter(([, d]) => d.qtd > 0).length;
   const pct   = Math.round((adq / total) * 100);
-  const flag  = flagUrl(selKey);
 
   const searchUpper = (search || '').toUpperCase();
   const filtered = expanded ? figurinhas.filter(([cod, d]) => {
@@ -87,26 +113,20 @@ const TeamSection = memo(({ selKey, sel, onInc, onDec, filter, defaultExpanded, 
 
   return (
     <View style={s.teamSection}>
-      {/* Header clicável para expandir/colapsar */}
       <TouchableOpacity style={s.teamHeader} onPress={() => setExpanded(e => !e)} activeOpacity={0.8}>
-        {flag
-          ? <Image source={{ uri: flag }} style={s.teamFlag} resizeMode="contain" />
-          : <View style={s.teamFlagPlaceholder}><Text>🌍</Text></View>
-        }
+        <TeamFlag code={selKey} />
         <View style={s.teamInfo}>
           <Text style={s.teamName}>{sel.nome}</Text>
           <View style={s.teamProgressRow}>
             <View style={s.teamProgressTrack}>
               <View style={[s.teamProgressFill, { width: `${pct}%` }]} />
             </View>
-            <Text style={s.teamProgressLabel}>{adq}/{total} — {pct}%</Text>
+            <Text style={s.teamProgressLabel}>{adq}/{total}</Text>
           </View>
         </View>
         <Text style={s.expandIcon}>{expanded ? '▲' : '▼'}</Text>
-        <Text style={s.teamCode}>{selKey}</Text>
       </TouchableOpacity>
 
-      {/* Grid só aparece se expandido */}
       {expanded && (
         <View style={s.grid}>
           {filtered.map(([cod, dados]) => (
@@ -158,7 +178,6 @@ function TradeModal({ visible, onClose, album }) {
     <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
       <View style={s.modalOverlay}>
         <View style={s.modalBox}>
-          {/* Header */}
           <View style={s.modalHeader}>
             <Text style={s.modalTitle}>🔄 Lista para Troca</Text>
             <TouchableOpacity style={s.modalClose} onPress={onClose}>
@@ -167,7 +186,6 @@ function TradeModal({ visible, onClose, album }) {
           </View>
 
           <ScrollView style={s.modalBody} contentContainerStyle={{ gap: 20 }}>
-            {/* Repetidas */}
             <View>
               <Text style={s.tradeLabel}>🔄 TENHO REPETIDAS</Text>
               <View style={s.tagWrap}>
@@ -181,8 +199,6 @@ function TradeModal({ visible, onClose, album }) {
                 }
               </View>
             </View>
-
-            {/* Faltam */}
             <View>
               <Text style={[s.tradeLabel, s.tradeLabelRed]}>❌ PRECISO</Text>
               <View style={s.tagWrap}>
@@ -198,7 +214,6 @@ function TradeModal({ visible, onClose, album }) {
             </View>
           </ScrollView>
 
-          {/* Footer */}
           <View style={s.modalFooter}>
             <TouchableOpacity style={s.tradeBtnCopy} onPress={handleCopy}>
               <Text style={s.tradeBtnTxt}>📋 Copiar texto</Text>
@@ -213,10 +228,54 @@ function TradeModal({ visible, onClose, album }) {
   );
 }
 
-// ── Progresso por grupo ──────────────────────────────────────────────────────
+// ── Selector Dropdown (reutilizável) ─────────────────────────────────────────
+function SelectorDropdown({ options, value, onChange, accentColor, icon, alignRight }) {
+  const [open, setOpen] = useState(false);
+  const current = options.find(o => o.key === value);
+  const accent = accentColor || T.blue;
+
+  return (
+    <View style={s.selectorWrap}>
+      <TouchableOpacity
+        style={[s.selectorBtn, value !== 'todas' && { borderColor: accent, backgroundColor: accent + '15' }]}
+        onPress={() => setOpen(o => !o)}
+        activeOpacity={0.7}
+      >
+        {icon && <Text style={s.selectorIcon}>{icon}</Text>}
+        <Text style={[s.selectorLabel, value !== 'todas' && { color: accent }]} numberOfLines={1}>
+          {current?.short || current?.label}
+        </Text>
+        <Text style={[s.selectorArrow, value !== 'todas' && { color: accent }]}>{open ? '▲' : '▼'}</Text>
+      </TouchableOpacity>
+
+      {open && (
+        <>
+          <Pressable style={s.selectorBackdrop} onPress={() => setOpen(false)} />
+          <View style={[s.selectorMenu, alignRight && { left: undefined, right: 0 }]}>
+            {options.map(opt => (
+              <TouchableOpacity
+                key={opt.key}
+                style={[s.selectorItem, value === opt.key && { backgroundColor: accent + '12' }]}
+                onPress={() => { onChange(opt.key); setOpen(false); Haptics.selectionAsync(); }}
+              >
+                {opt.icon && <Text style={s.selectorItemIcon}>{opt.icon}</Text>}
+                <Text style={[s.selectorItemTxt, value === opt.key && { color: accent, fontWeight: '700' }]}>
+                  {opt.label}
+                </Text>
+                {value === opt.key && <Text style={[s.selectorCheck, { color: accent }]}>✓</Text>}
+              </TouchableOpacity>
+            ))}
+          </View>
+        </>
+      )}
+    </View>
+  );
+}
+
+// ── Group progress helper ────────────────────────────────────────────────────
 function getGroupPct(tabKey, album) {
   const group = GROUPS[tabKey];
-  if (!group) return null; // "todas"
+  if (!group) return null;
   let total = 0, adq = 0;
   group.times.forEach(cod => {
     if (!album[cod]) return;
@@ -227,17 +286,29 @@ function getGroupPct(tabKey, album) {
   return total > 0 ? Math.round((adq / total) * 100) : 0;
 }
 
-// ── Main Screen ───────────────────────────────────────────────────────────────
+// ── Main Screen ──────────────────────────────────────────────────────────────
 export default function AlbumScreen() {
-  const [album, setAlbum]       = useState({});
-  const [loading, setLoading]   = useState(true);
-  const [error, setError]       = useState(null);
-  const [view, setView]         = useState('A');
-  const [filter, setFilter]     = useState('todas');
+  const [album, setAlbum]         = useState({});
+  const [loading, setLoading]     = useState(true);
+  const [error, setError]         = useState(null);
+  const [view, setView]           = useState('A');
+  const [filter, setFilter]       = useState('todas');
   const [tradeOpen, setTradeOpen] = useState(false);
   const [search, setSearch]       = useState('');
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => { loadAlbum(); }, []);
+
+  function toggleSearch() {
+    if (searchOpen) {
+      setSearch('');
+      Animated.timing(searchAnim, { toValue: 0, duration: 200, useNativeDriver: false }).start(() => setSearchOpen(false));
+    } else {
+      setSearchOpen(true);
+      Animated.timing(searchAnim, { toValue: 1, duration: 200, useNativeDriver: false }).start();
+    }
+  }
 
   async function loadAlbum() {
     try {
@@ -252,7 +323,6 @@ export default function AlbumScreen() {
     }
   }
 
-  // Optimistic update: atualiza a UI imediatamente, reverte se falhar
   const handleInc = useCallback((cod, selKey) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     setAlbum(prev => {
@@ -266,7 +336,6 @@ export default function AlbumScreen() {
       };
     });
     increment(cod).catch(() => {
-      // Reverte se a API falhar
       setAlbum(prev => {
         const qtd = Math.max(0, prev[selKey].figurinhas[cod].qtd - 1);
         return {
@@ -293,7 +362,6 @@ export default function AlbumScreen() {
       };
     });
     decrement(cod).catch(() => {
-      // Reverte se a API falhar
       setAlbum(prev => {
         const qtd = prev[selKey].figurinhas[cod].qtd + 1;
         return {
@@ -307,7 +375,6 @@ export default function AlbumScreen() {
     });
   }, []);
 
-  // Na aba "Todas", times ficam colapsados por padrão para não travar
   const defaultExpanded = view !== 'todas';
 
   function renderContent() {
@@ -349,17 +416,22 @@ export default function AlbumScreen() {
     </View>
   );
 
-  // Calcular progresso geral
-  const totalFig = 980; // 48 seleções + FWC × 20
+  const totalFig = 980;
   const adqFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).filter(f => f.qtd > 0).length, 0);
   const repFig   = Object.values(album).reduce((a, sel) => a + Object.values(sel.figurinhas).reduce((acc, f) => acc + Math.max(0, f.qtd - 1), 0), 0);
   const pctGeral = totalFig > 0 ? ((adqFig / totalFig) * 100).toFixed(1) : '0.0';
+
+  const searchInputWidth = searchAnim.interpolate({ inputRange: [0, 1], outputRange: [0, SW - 160] });
+  const searchInputOpacity = searchAnim.interpolate({ inputRange: [0, 0.3, 1], outputRange: [0, 0, 1] });
+
+  // Progresso do grupo selecionado
+  const grpPct = getGroupPct(view, album);
 
   return (
     <View style={s.root}>
       <TradeModal visible={tradeOpen} onClose={() => setTradeOpen(false)} album={album} />
 
-      {/* Botão flutuante com badge */}
+      {/* FAB */}
       <TouchableOpacity style={s.fab} onPress={() => setTradeOpen(true)}>
         <Text style={s.fabTxt}>🔄</Text>
         {repFig > 0 && (
@@ -369,61 +441,72 @@ export default function AlbumScreen() {
         )}
       </TouchableOpacity>
 
-      {/* Busca */}
-      <View style={s.searchWrap}>
-        <TextInput
-          style={s.searchInput}
-          placeholder="Buscar figurinha (ex: BRA5)"
-          placeholderTextColor={T.muted}
-          value={search}
-          onChangeText={setSearch}
-          autoCapitalize="characters"
-          autoCorrect={false}
+      {/* ── Header: progresso + busca ── */}
+      <View style={s.header}>
+        <View style={s.headerLeft}>
+          <Text style={s.headerPct}>{pctGeral}%</Text>
+          <View style={s.headerBarWrap}>
+            <View style={s.headerBar}>
+              <View style={[s.headerBarFill, { width: `${pctGeral}%` }]} />
+            </View>
+            <Text style={s.headerCount}>
+              {adqFig}/{totalFig} figurinhas  ·  {repFig} repetidas
+            </Text>
+          </View>
+        </View>
+
+        <View style={s.headerRight}>
+          {searchOpen && (
+            <Animated.View style={[s.searchAnimWrap, { width: searchInputWidth, opacity: searchInputOpacity }]}>
+              <TextInput
+                style={s.searchInput}
+                placeholder="Buscar..."
+                placeholderTextColor={T.muted}
+                value={search}
+                onChangeText={setSearch}
+                autoCapitalize="characters"
+                autoCorrect={false}
+                autoFocus
+              />
+            </Animated.View>
+          )}
+          <TouchableOpacity
+            style={[s.searchToggle, searchOpen && s.searchToggleActive]}
+            onPress={toggleSearch}
+          >
+            <Text style={s.searchToggleIcon}>{searchOpen ? '✕' : '🔍'}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* ── Seletores: grupo + filtro ── */}
+      <View style={s.selectorsRow}>
+        <SelectorDropdown
+          options={GROUP_OPTIONS}
+          value={view}
+          onChange={setView}
+          accentColor={T.gold}
+          icon="🏟️"
         />
-        {search.length > 0 && (
-          <TouchableOpacity style={s.searchClear} onPress={() => setSearch('')}>
-            <Text style={s.searchClearTxt}>✕</Text>
-          </TouchableOpacity>
+
+        {grpPct !== null && (
+          <View style={s.grpPctChip}>
+            <Text style={s.grpPctTxt}>{grpPct}%</Text>
+          </View>
         )}
+
+        <View style={{ flex: 1 }} />
+
+        <SelectorDropdown
+          options={FILTER_OPTIONS}
+          value={filter}
+          onChange={setFilter}
+          accentColor={T.blue}
+          alignRight
+        />
       </View>
 
-      {/* Progresso geral */}
-      <View style={s.topProgress}>
-        <View style={s.topProgressInfo}>
-          <Text style={s.topPct}>{pctGeral}%</Text>
-          <Text style={s.topCount}>{adqFig}/{totalFig} figurinhas  ·  🔄 {repFig} repetidas</Text>
-        </View>
-        <View style={s.topTrack}>
-          <View style={[s.topFill, { width: `${pctGeral}%` }]} />
-        </View>
-      </View>
-
-      {/* Group Tabs */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.tabsWrap} contentContainerStyle={s.tabsContent}>
-        {TABS.map(tab => {
-          const grpPct = getGroupPct(tab.key, album);
-          return (
-            <TouchableOpacity key={tab.key} style={[s.tab, view === tab.key && s.tabActive]} onPress={() => setView(tab.key)}>
-              <Text style={[s.tabTxt, view === tab.key && s.tabTxtActive]}>
-                {tab.label}
-                {grpPct !== null && <Text style={[s.tabPct, view === tab.key && s.tabPctActive]}> {grpPct}%</Text>}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
-
-      {/* Filter Pills */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={s.filterWrap} contentContainerStyle={s.filterContent}>
-        {FILTERS.map(f => (
-          <TouchableOpacity key={f.key} style={[s.filterBtn, filter === f.key && s.filterActive]} onPress={() => setFilter(f.key)}>
-            <Text style={[s.filterTxt, filter === f.key && s.filterTxtActive]}>{f.label}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-
-      <Text style={s.hint}>Toque +1 · Segure -1 · Toque no time para expandir</Text>
-
+      {/* ── Conteúdo ── */}
       <ScrollView style={s.scroll} contentContainerStyle={s.scrollContent}>
         {renderContent()}
       </ScrollView>
@@ -440,38 +523,78 @@ const s = StyleSheet.create({
   retryBtn: { backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border2, borderRadius: 10, paddingVertical: 10, paddingHorizontal: 24 },
   retryTxt: { color: T.text, fontWeight: '700' },
 
-  // Search
-  searchWrap: { flexDirection: 'row', alignItems: 'center', backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border, paddingHorizontal: 12, paddingVertical: 8 },
-  searchInput: { flex: 1, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 10, color: T.text, paddingHorizontal: 14, paddingVertical: 8, fontSize: 14 },
-  searchClear: { marginLeft: 8, backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 8, width: 30, height: 30, alignItems: 'center', justifyContent: 'center' },
-  searchClearTxt: { color: T.muted, fontSize: 12 },
+  // ── Header compacto ──
+  header: {
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+    backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border,
+    paddingHorizontal: 14, paddingVertical: 10,
+  },
+  headerLeft: { flexDirection: 'row', alignItems: 'center', gap: 10, flex: 1 },
+  headerPct: { color: T.gold, fontSize: 22, fontWeight: '900' },
+  headerBarWrap: { flex: 1, gap: 3 },
+  headerBar: { height: 5, backgroundColor: T.surface3, borderRadius: 99, overflow: 'hidden' },
+  headerBarFill: { height: '100%', backgroundColor: T.greenDim, borderRadius: 99 },
+  headerCount: { color: T.muted, fontSize: 10, fontWeight: '600' },
+  headerRight: { flexDirection: 'row', alignItems: 'center', marginLeft: 10 },
 
-  // Top progress
-  topProgress: { backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border, paddingHorizontal: 14, paddingVertical: 10 },
-  topProgressInfo: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 6 },
-  topPct: { color: T.gold, fontSize: 18, fontWeight: '800' },
-  topCount: { color: T.muted, fontSize: 11, fontWeight: '600' },
-  topTrack: { height: 6, backgroundColor: T.surface3, borderRadius: 99, overflow: 'hidden' },
-  topFill: { height: '100%', backgroundColor: T.greenDim, borderRadius: 99 },
+  // ── Search toggle ──
+  searchAnimWrap: { overflow: 'hidden', marginRight: 6 },
+  searchInput: {
+    backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border2,
+    borderRadius: 8, color: T.text, paddingHorizontal: 10, paddingVertical: 6,
+    fontSize: 13, height: 34,
+  },
+  searchToggle: {
+    width: 34, height: 34, borderRadius: 8,
+    backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border,
+    alignItems: 'center', justifyContent: 'center',
+  },
+  searchToggleActive: { borderColor: T.gold, backgroundColor: 'rgba(245,200,66,0.1)' },
+  searchToggleIcon: { fontSize: 14 },
 
-  tabsWrap: { backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border, maxHeight: 50 },
-  tabsContent: { paddingHorizontal: 10, paddingVertical: 8, gap: 6, flexDirection: 'row' },
-  tab: { backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 8, paddingHorizontal: 14, paddingVertical: 6 },
-  tabActive: { backgroundColor: 'rgba(245,200,66,0.12)', borderColor: T.gold },
-  tabTxt: { color: T.muted, fontSize: 12, fontWeight: '700' },
-  tabTxtActive: { color: T.gold },
-  tabPct: { fontSize: 9, fontWeight: '800', color: T.greenDim },
-  tabPctActive: { color: T.gold },
+  // ── Selectors row ──
+  selectorsRow: {
+    flexDirection: 'row', alignItems: 'center', gap: 8,
+    backgroundColor: T.surface, borderBottomWidth: 1, borderBottomColor: T.border,
+    paddingHorizontal: 14, paddingVertical: 8,
+    zIndex: 100,
+  },
 
-  filterWrap: { maxHeight: 44, borderBottomWidth: 1, borderBottomColor: T.border },
-  filterContent: { paddingHorizontal: 10, paddingVertical: 6, gap: 6, flexDirection: 'row' },
-  filterBtn: { backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 99, paddingHorizontal: 14, paddingVertical: 5 },
-  filterActive: { backgroundColor: 'rgba(68,138,255,0.15)', borderColor: T.blue },
-  filterTxt: { color: T.muted, fontSize: 12, fontWeight: '600' },
-  filterTxtActive: { color: T.blue },
+  // ── Group progress chip ──
+  grpPctChip: {
+    backgroundColor: 'rgba(0,200,83,0.12)', borderRadius: 6,
+    paddingHorizontal: 8, paddingVertical: 3,
+  },
+  grpPctTxt: { color: T.greenDim, fontSize: 11, fontWeight: '800' },
 
-  hint: { color: T.muted, fontSize: 10, textAlign: 'center', paddingVertical: 5, borderBottomWidth: 1, borderBottomColor: T.border },
+  // ── Selector dropdown (reutilizável) ──
+  selectorWrap: { position: 'relative', zIndex: 100 },
+  selectorBtn: {
+    flexDirection: 'row', alignItems: 'center', gap: 5,
+    backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border,
+    borderRadius: 10, paddingHorizontal: 12, paddingVertical: 7,
+  },
+  selectorIcon: { fontSize: 13 },
+  selectorLabel: { color: T.muted, fontSize: 13, fontWeight: '700', maxWidth: 120 },
+  selectorArrow: { color: T.muted, fontSize: 8, marginLeft: 2 },
+  selectorBackdrop: {
+    position: 'fixed', top: -500, left: -500, right: -500, bottom: -500, zIndex: 149,
+  },
+  selectorMenu: {
+    position: 'absolute', top: 40, left: 0, zIndex: 200,
+    backgroundColor: T.surface, borderWidth: 1, borderColor: T.border2,
+    borderRadius: 12, paddingVertical: 6, minWidth: 180,
+    shadowColor: '#000', shadowOpacity: 0.6, shadowRadius: 16, elevation: 12,
+  },
+  selectorItem: {
+    flexDirection: 'row', alignItems: 'center', gap: 10,
+    paddingHorizontal: 14, paddingVertical: 11,
+  },
+  selectorItemIcon: { fontSize: 15 },
+  selectorItemTxt: { color: T.muted, fontSize: 14, fontWeight: '600', flex: 1 },
+  selectorCheck: { fontSize: 14, fontWeight: '800' },
 
+  // ── Content ──
   scroll: { flex: 1 },
   scrollContent: { padding: 12, paddingBottom: 40 },
 
@@ -484,14 +607,15 @@ const s = StyleSheet.create({
   teamHeader: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 12, borderBottomWidth: 1, borderBottomColor: T.border },
   teamFlag: { width: 44, height: 30, borderRadius: 3 },
   teamFlagPlaceholder: { width: 44, height: 30, backgroundColor: T.surface3, borderRadius: 3, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: T.border2 },
+  teamFlagCode: { color: T.muted, fontSize: 9, fontWeight: '800' },
   teamInfo: { flex: 1 },
   teamName: { color: T.text, fontSize: 15, fontWeight: '700', letterSpacing: 1, marginBottom: 4 },
   teamProgressRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   teamProgressTrack: { flex: 1, height: 4, backgroundColor: T.surface3, borderRadius: 99, overflow: 'hidden' },
   teamProgressFill: { height: '100%', backgroundColor: T.greenDim, borderRadius: 99 },
   teamProgressLabel: { color: T.gold, fontSize: 10, fontWeight: '700' },
-  expandIcon: { color: T.muted, fontSize: 10, marginRight: 4 },
-  teamCode: { color: T.muted, fontSize: 11, fontWeight: '700', backgroundColor: T.surface2, borderWidth: 1, borderColor: T.border, borderRadius: 6, paddingHorizontal: 8, paddingVertical: 2 },
+  expandIcon: { color: T.muted, fontSize: 10 },
+
   grid: { flexDirection: 'row', flexWrap: 'wrap', padding: GRID_PAD, gap: GAP },
   emptyFilter: { color: T.muted, fontSize: 12, padding: 12 },
 

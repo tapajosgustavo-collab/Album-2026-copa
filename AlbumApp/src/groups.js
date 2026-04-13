@@ -17,7 +17,7 @@ export const ISO = {
 export function flagUrl(code) {
   const iso = ISO[code];
   if (!iso) return null;
-  return `https://flagcdn.com/w40/${iso}.png`;
+  return `https://flagcdn.com/w80/${iso}.png`;
 }
 
 export const GROUPS = {
