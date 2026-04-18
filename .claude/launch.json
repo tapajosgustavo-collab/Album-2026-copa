@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Flask API + Site Web",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["api.py"],
+      "port": 5000
+    },
+    {
+      "name": "Expo Mobile App",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--cwd", "AlbumApp"],
+      "port": 8081
+    }
+  ]
+}

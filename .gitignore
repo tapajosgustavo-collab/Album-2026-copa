@@ -21,8 +21,16 @@ showcase-repo/
 .DS_Store
 
 # Claude Code
+# Ignora por padrao, mas versiona o que e compartilhado entre devs:
+#   .claude/agents/*.md  — agentes do projeto (vao pro git)
+#   .claude/launch.json  — config de dev server (vai pro git)
+# Local-only (cada dev tem o seu):
+#   .claude/worktrees/, .claude/settings.local.json, CLAUDE.md
 CLAUDE.md
-.claude/
+.claude/*
+!.claude/agents/
+!.claude/agents/**
+!.claude/launch.json
 
 # Logs
 *.log
