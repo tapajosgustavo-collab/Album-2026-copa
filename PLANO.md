@@ -58,14 +58,14 @@ Fase 2 (Backend) ──┘                    │
 
 **Checkpoint 1** ✅ mergeado `agent/brand` + `agent/backend` em `main`
 
-### Fase 3 — 📱 Mobile (depende de 1+2)
-- [ ] `app.json`: bundleIdentifier, package, version, permissões
-- [ ] Criar `eas.json` com perfis dev/preview/production
-- [ ] Variáveis de ambiente (`.env.local`, `eas secret`)
-- [ ] Instalar `expo-updates` para OTA
-- [ ] `eas build --profile preview --platform android` (APK de teste)
+### Fase 3 — 📱 Mobile ✅ CONCLUÍDA
+- [x] `app.json`: bundleIdentifier, package, version, permissões
+- [x] Criar `eas.json` com perfis dev/preview/production
+- [x] Variáveis de ambiente (`.env.local`, `eas secret`)
+- [x] Instalar `expo-updates` para OTA
+- [x] `eas build --profile preview --platform android` (APK de teste)
 
-**Checkpoint 2** — testar APK no celular real
+**Checkpoint 2** ✅ APK testado no celular real — signup, álbum e increment/decrement funcionando
 
 ### Fase 4 — 🎬 Assets (paralelo com tail da Fase 3)
 - [ ] Gerar screenshots em simulador (phone + tablet Android)
@@ -108,6 +108,7 @@ iOS adicionado depois: +US$ 99/ano.
 - [x] Fase 1 (Brand) concluída e mergeada
 - [x] Fase 2 (Backend) concluída e mergeada — Supabase em produção
 - [x] Checkpoint 1 validado (signup + álbum + increment testados no Expo Go)
-- [ ] **Próximo**: Fase 3 (Mobile/EAS) — `app.json` + `eas.json` + primeiro APK
+- [x] Fase 3 (Mobile/EAS) concluída e mergeada — APK preview buildado e testado no celular real
+- [ ] **Próximo**: Fase 4 (Assets) — screenshots, descrições PT-BR, política de privacidade + termos em GitHub Pages
 
 > 🤝 **Handoff**: se outro dev for continuar, ler `HANDOFF.md` (não commitado — pedir ao Gustavo).
