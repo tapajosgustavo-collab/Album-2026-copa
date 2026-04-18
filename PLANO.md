@@ -40,22 +40,23 @@ Fase 2 (Backend) ──┘                    │
                               Fase 4 (Assets) ─▶ merge
 ```
 
-### Fase 1 — 🎨 Brand (paralelo com Fase 2)
-- [ ] Renomear para "Meu Álbum 2026" em todos os textos
-- [ ] Remover menções diretas a FIFA / Panini / Copa do Mundo (marca registrada)
-- [ ] Adicionar disclaimer "App não-oficial" no header e README
-- [ ] Regenerar ícone e splash neutros
-- [ ] Atualizar README.md público
+### Fase 1 — 🎨 Brand ✅ CONCLUÍDA
+- [x] Renomear para "Meu Álbum 2026" em todos os textos
+- [x] Remover menções diretas a FIFA / Panini / Copa do Mundo (marca registrada)
+- [x] Adicionar disclaimer "App não-oficial" no header e README
+- [ ] Regenerar ícone e splash neutros _(pendente — ver `TODO_BRAND.md`)_
+- [x] Atualizar README.md público
 
-### Fase 2 — 🔧 Backend (paralelo com Fase 1)
-- [ ] Criar projeto Supabase
-- [ ] Schema: `users`, `albums`, `stickers` com RLS
-- [ ] Migration SQL em `supabase/migrations/`
-- [ ] Trocar `AlbumApp/src/api.js` por cliente Supabase
-- [ ] Auth via e-mail/senha + Google OAuth
-- [ ] Manter `api.py` Flask como dev fallback (opcional)
+### Fase 2 — 🔧 Backend ✅ CONCLUÍDA
+- [x] Criar projeto Supabase (`zuvjmzzkbwxasbmxkmnu`, São Paulo)
+- [x] Schema: `albums`, `stickers` com RLS
+- [x] Migration SQL em `supabase/migrations/20260417000000_init.sql`
+- [x] Trocar `AlbumApp/src/api.js` por cliente Supabase
+- [x] Auth via e-mail/senha (Google OAuth pode vir depois)
+- [x] Manter `api.py` Flask como dev fallback (opcional)
+- [x] Testado end-to-end no Expo Go (signup, álbum, increment/decrement)
 
-**Checkpoint 1** — merge `agent/brand` + `agent/backend` em `main`
+**Checkpoint 1** ✅ mergeado `agent/brand` + `agent/backend` em `main`
 
 ### Fase 3 — 📱 Mobile (depende de 1+2)
 - [ ] `app.json`: bundleIdentifier, package, version, permissões
@@ -103,6 +104,10 @@ iOS adicionado depois: +US$ 99/ano.
 
 - [x] Defaults aprovados
 - [x] `PLANO.md` criado
-- [ ] Agentes criados em `.claude/agents/`
-- [ ] Worktrees preparados
-- [ ] Fase 1+2 rodando em paralelo
+- [x] Agentes criados em `.claude/agents/`
+- [x] Fase 1 (Brand) concluída e mergeada
+- [x] Fase 2 (Backend) concluída e mergeada — Supabase em produção
+- [x] Checkpoint 1 validado (signup + álbum + increment testados no Expo Go)
+- [ ] **Próximo**: Fase 3 (Mobile/EAS) — `app.json` + `eas.json` + primeiro APK
+
+> 🤝 **Handoff**: se outro dev for continuar, ler `HANDOFF.md` (não commitado — pedir ao Gustavo).

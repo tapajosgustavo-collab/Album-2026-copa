@@ -52,3 +52,6 @@ secrets/
 google-services.json
 GoogleService-Info.plist
 
+# Handoff (contem credenciais Supabase, compartilhar por fora do GitHub)
+HANDOFF.md
+
