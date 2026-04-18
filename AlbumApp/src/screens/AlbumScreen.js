@@ -160,7 +160,7 @@ function TradeModal({ visible, onClose, album }) {
   }
 
   const texto =
-    `🏆 *Álbum Copa 2026 - Lista para Troca*\n\n` +
+    `🏆 *Meu Álbum 2026 - Lista para Troca*\n\n` +
     `🔄 *TENHO REPETIDAS:*\n${repetidas.length ? repetidas.map(r => `${r.cod} (×${r.qtd})`).join(', ') : 'Nenhuma'}\n\n` +
     `❌ *PRECISO:*\n${faltam.length ? faltam.join(', ') : 'Nenhuma'}\n\n` +
     `📲 Me chama pra trocar!`;
@@ -317,7 +317,7 @@ export default function AlbumScreen() {
       const data = await getAlbum();
       setAlbum(data);
     } catch {
-      setError('Não foi possível conectar à API.\nVerifique se o servidor Flask está rodando.');
+      setError('Não foi possível conectar à API.\nVerifique sua conexão e tente novamente.');
     } finally {
       setLoading(false);
     }

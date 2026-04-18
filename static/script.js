@@ -412,7 +412,7 @@ function openTradeModal() {
   // Monta texto para compartilhar
   const textoRep   = repetidas.length ? repetidas.map(r => `${r.cod} (×${r.qtd})`).join(', ') : 'Nenhuma';
   const textoFalta = faltam.length    ? faltam.join(', ') : 'Nenhuma';
-  const texto = `🏆 *Álbum Copa 2026 - Lista para Troca*\n\n🔄 *TENHO REPETIDAS:*\n${textoRep}\n\n❌ *PRECISO:*\n${textoFalta}\n\n📲 Me chama pra trocar!`;
+  const texto = `🏆 *Meu Álbum 2026 - Lista para Troca*\n\n🔄 *TENHO REPETIDAS:*\n${textoRep}\n\n❌ *PRECISO:*\n${textoFalta}\n\n📲 Me chama pra trocar!`;
 
   // Copiar
   document.getElementById('btn-copy').onclick = () => {

@@ -39,7 +39,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Padrão hexagonal sutil (referência à bola de futebol) */
+/* Padrão hexagonal sutil decorativo */
 body::after {
   content: '';
   position: fixed;
@@ -49,7 +49,7 @@ body::after {
   z-index: 0;
 }
 
-/* Listra diagonal Copa 2026 */
+/* Listra diagonal decorativa */
 body::before {
   content: '';
   position: fixed;
@@ -63,7 +63,7 @@ body::before {
   z-index: 0;
 }
 
-/* BG BLOBS — cores oficiais Copa 2026 */
+/* BG BLOBS — paleta azul/vermelho/dourado */
 .bg-blob {
   position: fixed;
   border-radius: 50%;
@@ -72,11 +72,11 @@ body::before {
   z-index: 0;
   animation: blobmove 22s ease-in-out infinite alternate;
 }
-/* Azul FIFA */
+/* Azul */
 .blob1 { width: 700px; height: 700px; background: #0038a8; opacity: 0.12; top: -250px; left: -200px; }
-/* Vermelho Copa */
+/* Vermelho */
 .blob2 { width: 500px; height: 500px; background: #c8102e; opacity: 0.09; bottom: -150px; right: 100px; animation-delay: -9s; }
-/* Dourado Troféu */
+/* Dourado */
 .blob3 { width: 400px; height: 400px; background: #f5c518; opacity: 0.06; top: 35%; right: -120px; animation-delay: -5s; }
 @keyframes blobmove {
   from { transform: translate(0, 0) scale(1); }
@@ -107,7 +107,7 @@ body::before {
   position: relative;
   overflow: hidden;
 }
-/* Listras diagonais Copa no hero */
+/* Listras diagonais no hero */
 .sidebar-hero::before {
   content: '';
   position: absolute;
@@ -769,6 +769,20 @@ body::before {
 .trade-btn-copy:hover { border-color: var(--gold); color: var(--gold); }
 .trade-btn-whatsapp { background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.3); color: #25d366; }
 .trade-btn-whatsapp:hover { background: rgba(37,211,102,0.2); }
+
+/* ===== DISCLAIMER ===== */
+.disclaimer {
+  margin-top: 48px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  opacity: 0.75;
+}
+.disclaimer strong { color: var(--text); font-weight: 700; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {

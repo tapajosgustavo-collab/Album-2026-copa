@@ -11,6 +11,9 @@ env/
 # Dados locais do álbum (progresso pessoal do usuário)
 album_salvo.json
 
+# Showcase repo (tem git próprio, não é submodule)
+showcase-repo/
+
 # IDE / Editor
 .vscode/
 .idea/
@@ -23,3 +26,29 @@ CLAUDE.md
 
 # Logs
 *.log
+
+# Node / Expo
+node_modules/
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+
+# Environment variables (mantém .env.example!)
+.env
+.env.local
+.env.*.local
+AlbumApp/.env
+AlbumApp/.env.local
+AlbumApp/.env.*.local
+
+# Secrets (service accounts, certificados)
+secrets/
+*.jks
+*.keystore
+*.p8
+*.p12
+*.mobileprovision
+google-services.json
+GoogleService-Info.plist
+
