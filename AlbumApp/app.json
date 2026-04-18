@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "AlbumApp",
-    "slug": "AlbumApp",
+    "name": "Meu Álbum 2026",
+    "slug": "meu-album-2026",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

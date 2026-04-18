@@ -1,12 +1,16 @@
-# 🏆 Álbum Copa do Mundo 2026
+# 🏆 Meu Álbum 2026
 
-Aplicação completa para acompanhar a coleção de figurinhas do álbum oficial da Copa do Mundo FIFA 2026 — com **48 seleções**, **12 grupos** e **980 figurinhas** ao todo.
+Aplicativo pessoal para organizar e acompanhar uma coleção particular de figurinhas — com **48 seleções**, **12 grupos** e **980 slots** no total.
+
+> **Disclaimer**: *Meu Álbum 2026* é um aplicativo pessoal para rastreio de coleções de figurinhas. **Não é afiliado, endossado ou conectado à FIFA, Panini ou qualquer entidade oficial.** Nomes de países e códigos ISO de bandeiras são usados de forma puramente nominativa.
 
 O projeto inclui três frentes integradas:
 
-- 🌐 **API Flask** (backend Python) que persiste o progresso em JSON
+- 🌐 **API Flask** (backend de desenvolvimento) que persiste o progresso em JSON
 - 💻 **Site web responsivo** (HTML/CSS/JS vanilla) servido pela própria API
 - 📱 **App mobile React Native + Expo** que consome a mesma API
+
+Para produção nas lojas, o backend será migrado para **Supabase** (veja `PLANO.md`).
 
 ---
 
@@ -14,10 +18,10 @@ O projeto inclui três frentes integradas:
 
 - ✅ Controle por seleção: marcar figurinhas como **falta**, **tenho** e **repetidas**
 - 🔍 Busca instantânea por código (ex.: `BRA1`, `ARG`) com botão de limpar
-- 🎯 Filtros por status: **Todas**, **Falta**, **Tenho**, **Repetidas**
+- 🎯 Filtros por status: **Todas**, **Falta**, **Tenho**, **Repetidas**, **Shiny**
 - 📊 Tela de estatísticas com progresso global e por seleção
 - 📑 Abas por grupo (FWC + Grupos A–L) com **percentual de progresso individual**
-- 💾 Persistência automática no servidor (JSON)
+- 💾 Persistência automática (JSON no dev, Supabase na produção)
 - 🔄 Atualização otimista da UI com rollback em caso de erro de rede
 - 📳 Feedback tátil (haptics) e UX caprichada no app mobile
 - 🌍 Bandeiras carregadas via [flagcdn.com](https://flagcdn.com)
@@ -28,10 +32,11 @@ O projeto inclui três frentes integradas:
 
 | Camada | Tecnologias |
 |---|---|
-| **Backend** | Python 3, Flask |
+| **Backend (dev)** | Python 3, Flask |
+| **Backend (produção)** | Supabase (Postgres + Auth) |
 | **Frontend Web** | HTML5, CSS3, JavaScript (vanilla, sem build step) |
 | **Mobile** | React Native, Expo SDK 54, React Navigation |
-| **Persistência** | Arquivo JSON local (`album_salvo.json`) |
+| **Persistência** | Arquivo JSON local (dev) / Supabase Postgres (prod) |
 | **Assets** | flagcdn.com (bandeiras dos países por código ISO) |
 
 ---
@@ -39,26 +44,32 @@ O projeto inclui três frentes integradas:
 ## 📁 Estrutura do projeto
 
 ```
-Album 2026/
-├── api.py                  # API Flask (rotas REST)
+Meu Álbum 2026/
+├── api.py                  # API Flask (dev)
 ├── backend.py              # Geração inicial do álbum + persistência
 ├── static/                 # Site web
 │   ├── index.html
 │   ├── script.js
 │   └── style.css
-└── AlbumApp/               # App mobile (Expo)
-    ├── App.js
-    └── src/
-        ├── api.js          # Cliente HTTP
-        ├── groups.js       # Definição dos 12 grupos + ISO das bandeiras
-        └── screens/
-            ├── AlbumScreen.js
-            └── StatsScreen.js
+├── supabase/               # Migrations e config (produção)
+├── AlbumApp/               # App mobile (Expo)
+│   ├── App.js
+│   └── src/
+│       ├── api.js          # Cliente (Supabase ou Flask)
+│       ├── supabase.js     # Cliente Supabase JS
+│       ├── auth/           # Autenticação
+│       ├── groups.js       # Definição dos 12 grupos + ISO das bandeiras
+│       └── screens/
+│           ├── AlbumScreen.js
+│           └── StatsScreen.js
+├── .claude/agents/         # Agentes especializados p/ publicação
+├── PLANO.md                # Roadmap de publicação nas lojas
+└── README.md
 ```
 
 ---
 
-## 🚀 Como executar
+## 🚀 Como executar (desenvolvimento)
 
 ### Backend + Site web
 
@@ -85,7 +96,7 @@ npx expo start
 
 ---
 
-## 📡 Endpoints da API
+## 📡 Endpoints da API (dev)
 
 | Método | Rota | Descrição |
 |---|---|---|
@@ -94,9 +105,11 @@ npx expo start
 | `POST` | `/api/album/<cod>/decrement` | Decrementa quantidade de uma figurinha |
 | `GET` | `/api/estatisticas` | Retorna estatísticas globais (total, adquiridas, repetidas, %) |
 
+Em produção, essas funções são substituídas por chamadas diretas ao Supabase (ver `docs/BACKEND.md`).
+
 ---
 
-## 🏟️ Os 12 grupos da Copa 2026
+## 🏟️ Os 12 grupos
 
 | Grupo | Seleções |
 |---|---|
@@ -113,12 +126,20 @@ npx expo start
 | **K** | Portugal · RD Congo · Uzbequistão · Colômbia |
 | **L** | Inglaterra · Croácia · Gana · Panamá |
 
-Mais a seção especial **FWC** com 20 figurinhas de símbolos e estádios — totalizando **49 seções × 20 = 980 figurinhas**.
+Mais a seção especial **FWC** com 20 slots de símbolos e estádios — totalizando **49 seções × 20 = 980 figurinhas**.
+
+---
+
+## 📱 Publicação nas lojas
+
+Este projeto está em preparação para publicação na **Google Play Store** (e App Store depois). Veja `PLANO.md` para o roadmap completo.
+
+Política de Privacidade: (a ser publicada em GitHub Pages na Fase 4)
 
 ---
 
 ## 👤 Autor
 
-Desenvolvido por **Gustavo Tapajós** — projeto pessoal de portfólio.
+Desenvolvido por **Gustavo Tapajós** — projeto pessoal de portfólio e estudo.
 
 [GitHub](https://github.com/tapajosgustavo-collab)
