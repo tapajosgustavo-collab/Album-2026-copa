@@ -16,7 +16,8 @@ const USE_FLASK_FALLBACK =
   !process.env.EXPO_PUBLIC_SUPABASE_URL ||
   !process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
-const FLASK_URL = process.env.EXPO_PUBLIC_FLASK_URL || 'http://192.168.0.216:5000';
+// Defina EXPO_PUBLIC_FLASK_URL no .env local com seu IP (ex: http://192.168.1.100:5000)
+const FLASK_URL = process.env.EXPO_PUBLIC_FLASK_URL || 'http://localhost:5000';
 
 export const API_URL = USE_FLASK_FALLBACK ? FLASK_URL : 'supabase';
 
