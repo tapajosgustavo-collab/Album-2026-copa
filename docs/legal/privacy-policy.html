@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade — Meu Álbum 2026</title>
+  <style>
+    :root {
+      --fg: #1a1a1a;
+      --muted: #555;
+      --accent: #0b5394;
+      --bg: #fafafa;
+      --card: #ffffff;
+      --border: #e4e4e4;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--fg);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 20px 64px;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin: 0 0 4px;
+      color: var(--accent);
+      line-height: 1.25;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin-top: 32px;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    h3 {
+      font-size: 1rem;
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+    p, ul, ol { margin: 0 0 12px; }
+    ul, ol { padding-left: 22px; }
+    li { margin-bottom: 4px; }
+    .muted { color: var(--muted); font-size: 0.9rem; }
+    a { color: var(--accent); }
+    code {
+      background: #eef2f7;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin: 16px 0;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    @media (max-width: 480px) {
+      main { padding: 16px 14px 48px; }
+      h1 { font-size: 1.45rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Política de Privacidade</h1>
+      <p class="muted">Meu Álbum 2026 &middot; Última atualização: 23 de abril de 2026</p>
+    </header>
+
+    <p>Esta Política de Privacidade descreve como o aplicativo <strong>Meu Álbum 2026</strong> coleta, usa e protege os dados pessoais dos usuários. O documento foi elaborado em conformidade com a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018 — LGPD) e com os requisitos do Google Play Data Safety.</p>
+
+    <h2>1. Controlador dos dados</h2>
+    <div class="card">
+      <p><strong>Gustavo de Melo Tapajós</strong><br>
+      Desenvolvedor independente — projeto pessoal.<br>
+      Contato: <a href="mailto:tapajosgustavo@gmail.com">tapajosgustavo@gmail.com</a></p>
+    </div>
+    <p>O autor é o único responsável pelo tratamento de dados realizado por este aplicativo e é o ponto de contato para qualquer solicitação relacionada a esta política.</p>
+
+    <h2>2. Quais dados coletamos</h2>
+    <p>Coletamos apenas o mínimo necessário para que o aplicativo funcione:</p>
+    <ul>
+      <li><strong>E-mail</strong>: informado pelo usuário no cadastro, utilizado pelo serviço de autenticação (Supabase Auth) para identificar a conta e permitir login.</li>
+      <li><strong>Senha</strong>: armazenada de forma segura pelo provedor de autenticação (hash criptográfico). O desenvolvedor não tem acesso à senha em texto plano.</li>
+      <li><strong>Progresso do álbum</strong>: quantidade de figurinhas que o usuário marca como possuídas, repetidas ou faltantes para cada um dos 980 slots. Essas informações ficam associadas ao identificador da conta.</li>
+    </ul>
+
+    <h3>O que NÃO coletamos</h3>
+    <ul>
+      <li>Localização geográfica (precisa ou aproximada)</li>
+      <li>Fotos, câmera, microfone ou biblioteca de mídia</li>
+      <li>Contatos, agenda ou lista de chamadas</li>
+      <li>Identificadores publicitários ou métricas de anúncios</li>
+      <li>Analytics de terceiros (Google Analytics, Firebase Analytics, Meta Pixel etc.)</li>
+      <li>Informações de pagamento (o app é gratuito e não possui compras no aplicativo)</li>
+    </ul>
+
+    <h2>3. Finalidade do tratamento</h2>
+    <p>Os dados coletados são utilizados exclusivamente para:</p>
+    <ul>
+      <li>Autenticar o usuário e vincular o progresso do álbum à sua conta;</li>
+      <li>Persistir o estado da coleção entre sessões e dispositivos;</li>
+      <li>Permitir que o usuário consulte e gerencie seu próprio álbum.</li>
+    </ul>
+    <p>Base legal (art. 7º da LGPD): execução de contrato com o titular (termos de uso do aplicativo) e legítimo interesse para segurança da conta.</p>
+
+    <h2>4. Compartilhamento com terceiros</h2>
+    <p>Não comercializamos, alugamos nem vendemos dados pessoais a terceiros. Para operar o serviço, utilizamos o seguinte operador na forma prevista pelo art. 5º da LGPD:</p>
+    <ul>
+      <li><strong>Supabase Inc.</strong> — provedor de banco de dados (PostgreSQL) e autenticação. Os dados do aplicativo são armazenados em infraestrutura hospedada pela Supabase. A instância utilizada está configurada na região <em>South America (São Paulo)</em>, e o processamento pode, em situações operacionais, envolver infraestrutura da Supabase nos Estados Unidos (por exemplo, gerenciamento de conta, e-mails transacionais de confirmação e backups). Consulte a política da Supabase em <a href="https://supabase.com/privacy" target="_blank" rel="noopener">supabase.com/privacy</a>.</li>
+    </ul>
+    <p>O acesso aos dados é restrito por <em>Row Level Security</em> (RLS) do PostgreSQL: cada usuário só pode ler e escrever os próprios registros.</p>
+    <p>Poderemos divulgar informações caso sejamos obrigados por lei, ordem judicial ou requisição de autoridade competente.</p>
+
+    <h2>5. Segurança</h2>
+    <ul>
+      <li>Comunicação entre o app e o Supabase ocorre sempre via HTTPS/TLS;</li>
+      <li>Senhas são armazenadas com hash criptográfico pelo provedor de autenticação;</li>
+      <li>Regras de RLS isolam os dados de cada usuário no banco de dados.</li>
+    </ul>
+    <p>Apesar dos controles aplicados, nenhum serviço online é totalmente imune a falhas. Em caso de incidente de segurança relevante envolvendo seus dados, o controlador comunicará o titular e, quando aplicável, a Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+    <h2>6. Retenção</h2>
+    <p>Os dados são mantidos enquanto a conta do usuário estiver ativa. O usuário pode encerrar a sessão a qualquer momento pela tela de configurações do aplicativo. Para excluir a conta e todos os dados associados, envie um pedido para <a href="mailto:tapajosgustavo@gmail.com">tapajosgustavo@gmail.com</a> — a exclusão será realizada em até 30 dias corridos a partir da confirmação do pedido.</p>
+
+    <h2>7. Direitos do titular (LGPD)</h2>
+    <p>Nos termos dos arts. 17 a 22 da LGPD, o titular pode, a qualquer momento e de forma gratuita:</p>
+    <ul>
+      <li>Confirmar a existência de tratamento dos seus dados;</li>
+      <li>Acessar os dados pessoais que mantemos sobre você;</li>
+      <li>Corrigir dados incompletos, inexatos ou desatualizados;</li>
+      <li>Solicitar a anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade com a LGPD;</li>
+      <li>Solicitar a portabilidade dos dados;</li>
+      <li>Revogar o consentimento e solicitar a eliminação dos dados tratados com base em consentimento;</li>
+      <li>Obter informação sobre entidades com as quais compartilhamos seus dados.</li>
+    </ul>
+    <p>Para exercer qualquer um desses direitos, basta enviar uma mensagem para <a href="mailto:tapajosgustavo@gmail.com">tapajosgustavo@gmail.com</a> a partir do e-mail cadastrado na conta, indicando o direito que deseja exercer.</p>
+
+    <h2>8. Menores de idade</h2>
+    <p>O aplicativo é classificado como <strong>Livre</strong>, porém exige a criação de conta com e-mail. Por essa razão, recomendamos o uso por pessoas com <strong>13 anos ou mais</strong>. Crianças abaixo dessa idade só devem utilizar o aplicativo com o consentimento e a supervisão de um responsável legal, que será considerado o titular de fato da conta para efeitos desta política.</p>
+
+    <h2>9. Alterações desta política</h2>
+    <p>Esta política pode ser atualizada para refletir mudanças no aplicativo, na legislação ou nas práticas de tratamento de dados. A versão mais recente estará sempre disponível nesta mesma URL, e a data de atualização será revisada no topo do documento. Alterações materiais serão comunicadas pelo aplicativo ou pelo e-mail cadastrado, quando cabível.</p>
+
+    <h2>10. Contato</h2>
+    <p>Dúvidas, solicitações ou reclamações sobre esta política e sobre o tratamento dos seus dados pessoais podem ser enviadas para:</p>
+    <div class="card">
+      <p><strong>E-mail</strong>: <a href="mailto:tapajosgustavo@gmail.com">tapajosgustavo@gmail.com</a><br>
+      <strong>Assunto sugerido</strong>: <code>LGPD — Meu Álbum 2026</code></p>
+    </div>
+
+    <footer>
+      <p>Meu Álbum 2026 é um projeto pessoal, <strong>não-oficial</strong>, sem qualquer afiliação, endosso ou conexão com FIFA, Panini, Copa do Mundo ou qualquer entidade organizadora. Nomes de países e códigos ISO de bandeiras são utilizados de forma puramente nominativa e descritiva.</p>
+      <p>&copy; 2026 Gustavo de Melo Tapajós.</p>
+    </footer>
+  </main>
+</body>
+</html>
