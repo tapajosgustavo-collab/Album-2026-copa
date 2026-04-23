@@ -84,6 +84,20 @@ Fase 2 (Backend) ──┘                    │
 - [ ] Enviar para review (interno → fechado → produção)
 - [ ] Responder feedback se vier
 
+### Fase 6 — 💰 Monetização via AdMob _(pós-lançamento, quando quisermos retorno financeiro)_
+- [ ] Criar conta Google AdMob (grátis) e linkar com Play Console
+- [ ] Instalar `react-native-google-mobile-ads` no Expo
+- [ ] Implementar banner no rodapé da tela de Álbum
+- [ ] (Fase 6.1) Adicionar intersticial suave a cada N ações
+- [ ] Atualizar `privacy-policy.html` mencionando AdMob + consentimento GDPR/LGPD
+- [ ] Atualizar `terms.html` com cláusula sobre anúncios
+- [ ] Play Console: mudar "Contém ads = Sim", atualizar Data Safety (ID de publicidade)
+- [ ] Revalidar classificação etária (pode subir de Livre pra 12+)
+- [ ] Submeter nova versão (v1.1.0)
+- [ ] (Opcional v2.0) Variante "Pro" sem ads por valor one-time
+
+> **Estratégia**: lançar v1.0 **sem ads** pra aprovação rápida e reviews limpos nos primeiros 1-2 meses. Só então ativar Fase 6 com dados reais de uso.
+
 ---
 
 ## 💰 Custos totais estimados
