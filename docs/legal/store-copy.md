@@ -120,16 +120,22 @@ Justificativas pra cada pergunta comum do questionário:
 
 ## Privacy policy URL
 
-Placeholder até o deploy no GitHub Pages:
+URL pública (GitHub Pages ativo):
 
 ```
-https://tapajosgustavo-collab.github.io/Album-2026-copa/privacy-policy.html
+https://tapajosgustavo-collab.github.io/Album-2026-copa/legal/privacy-policy.html
 ```
 
 Termos de uso (se a Play Console pedir em campo separado):
 
 ```
-https://tapajosgustavo-collab.github.io/Album-2026-copa/terms.html
+https://tapajosgustavo-collab.github.io/Album-2026-copa/legal/terms.html
+```
+
+Landing com ambos os links:
+
+```
+https://tapajosgustavo-collab.github.io/Album-2026-copa/legal/
 ```
 
 ---
