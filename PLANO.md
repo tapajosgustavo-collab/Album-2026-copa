@@ -1,6 +1,6 @@
 # 🚀 Plano Mestre — Publicação "Meu Álbum 2026"
 
-> **Autor**: Gustavo Tapajós · **RA**: 177063
+> **Autores**: Gustavo Tapajós · **RA**: 177063 | João Medina
 > **Objetivo**: publicar o app nas lojas (Google Play primeiro, App Store depois)
 > **Stack decidida**: React Native + Expo · Supabase (Auth + Postgres) · EAS Build
 

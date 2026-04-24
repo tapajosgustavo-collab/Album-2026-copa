@@ -73,7 +73,7 @@ Não há plano premium, não há banners, não há assinatura. O código é aber
 
 📨 Suporte
 
-Dúvidas, sugestões ou pedidos de exclusão de conta: tapajosgustavo@gmail.com
+Dúvidas, sugestões ou pedidos de exclusão de conta: tapajosgustavo@gmail.com ou joaohmedina@outlook.com
 
 ⚠️ Aviso de não-afiliação
 
@@ -144,6 +144,7 @@ https://tapajosgustavo-collab.github.io/Album-2026-copa/legal/
 
 ```
 tapajosgustavo@gmail.com
+joaohmedina@outlook.com
 ```
 
 ---

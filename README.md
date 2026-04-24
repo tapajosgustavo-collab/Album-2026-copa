@@ -138,8 +138,8 @@ Política de Privacidade: (a ser publicada em GitHub Pages na Fase 4)
 
 ---
 
-## 👤 Autor
+## 👤 Autores
 
-Desenvolvido por **Gustavo Tapajós** — projeto pessoal de portfólio e estudo.
+Desenvolvido por **Gustavo Tapajós** e **João Medina** — projeto pessoal de portfólio e estudo.
 
-[GitHub](https://github.com/tapajosgustavo-collab)
+[GitHub Gustavo](https://github.com/tapajosgustavo-collab) · [GitHub João](https://github.com/joaohmedina)
